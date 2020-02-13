@@ -25,3 +25,18 @@
 .name{
     background: blue;
 }
+.hero-social{
+    padding: 0.2rem;
+    background: lightgreen;
+    display: flex;
+}
+.icon-container{
+    margin: 4px;
+
+    padding: 8px;
+    background: darkred;
+    border-radius: 5px;
+}
+.icon{
+    color: #fff;
+}
