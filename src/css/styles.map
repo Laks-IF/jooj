@@ -7,10 +7,10 @@
 		"../scss/reset.scss"
 	],
 	"sourcesContent": [
-		"@import \"./variables.scss\";\r\n@import \"./reset.scss\";\r\n\r\n.main-header{\r\n    height: 350px;\r\n    background: blue;\r\n}",
+		"@import \"./variables.scss\";\r\n@import \"./reset.scss\";\r\n\r\n.logo{\r\n    font-family: 'Galada', cursive;\r\n    font-size: 2em;\r\n}\r\n.main-header{\r\n    height: 350px;\r\n    background: #d9d9d9;\r\n    position: relative;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    flex-direction: column;\r\n\r\n    padding-bottom: 45px;\r\n\r\n    width: 100%;\r\n}",
 		"$primary: #9485;",
-		"*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    outline: none;\r\n}"
+		"*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    outline: none;\r\n    font-family: 'Poppins', sans-serif;\r\n    font-family: 'Galada', cursive;\r\n    font-size: 1em;\r\n}"
 	],
 	"names": [],
-	"mappings": ";AEAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;CAChB;;;AFFD,AAAA,YAAY,CAAA;EACR,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,IAAI;CACnB"
+	"mappings": ";AEAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,qBAAqB;EAClC,WAAW,EAAE,iBAAiB;EAC9B,SAAS,EAAE,GAAG;CACjB;;;AFLD,AAAA,KAAK,CAAA;EACD,WAAW,EAAE,iBAAiB;EAC9B,SAAS,EAAE,GAAG;CACjB;;;AACD,AAAA,YAAY,CAAA;EACR,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,OAAO;EACnB,QAAQ,EAAE,QAAQ;EAElB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,MAAM;EAEtB,cAAc,EAAE,IAAI;EAEpB,KAAK,EAAE,IAAI;CACd"
 }

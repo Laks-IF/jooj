@@ -1,7 +1,20 @@
 @import "./variables.scss";
 @import "./reset.scss";
 
+.logo{
+    font-family: 'Galada', cursive;
+    font-size: 2em;
+}
 .main-header{
     height: 350px;
-    background: blue;
+    background: #d9d9d9;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    padding-bottom: 45px;
+
+    width: 100%;
 }
