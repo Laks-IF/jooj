@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"../scss/styles.scss",
+		"../scss/variables.scss",
+		"../scss/reset.scss"
+	],
+	"sourcesContent": [
+		"@import \"./variables.scss\";\r\n@import \"./reset.scss\";\r\n\r\n.main-header{\r\n    height: 350px;\r\n    background: blue;\r\n}",
+		"$primary: #9485;",
+		"*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    outline: none;\r\n}"
+	],
+	"names": [],
+	"mappings": ";AEAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;CAChB;;;AFFD,AAAA,YAAY,CAAA;EACR,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,IAAI;CACnB"
+}
