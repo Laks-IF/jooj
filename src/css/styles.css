@@ -13,10 +13,9 @@
 .logo {
   font-family: 'Galada', cursive;
   font-size: 2em;
-  background: red;
 }
 
-/* line 9, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 8, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
 .main-header {
   height: 350px;
   background: #d9d9d9;
@@ -24,29 +23,23 @@
   padding-bottom: 45px;
 }
 
-/* line 16, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 15, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
 .main-hero {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: green;
   height: 100%;
 }
 
 /* line 25, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
-.name {
-  background: blue;
-}
-
-/* line 28, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
 .hero-social {
   padding: 0.2rem;
   background: lightgreen;
   display: flex;
 }
 
-/* line 33, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 30, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
 .icon-container {
   margin: 4px;
   padding: 8px;
@@ -54,7 +47,7 @@
   border-radius: 5px;
 }
 
-/* line 40, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 37, ../../../Desktop/lucas-portifolio/src/scss/styles.scss */
 .icon {
   color: #fff;
 }
