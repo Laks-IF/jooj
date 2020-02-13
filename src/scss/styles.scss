@@ -4,17 +4,24 @@
 .logo{
     font-family: 'Galada', cursive;
     font-size: 2em;
+    background: red;
 }
 .main-header{
     height: 350px;
     background: #d9d9d9;
     position: relative;
 
+    padding-bottom: 45px;
+}
+.main-hero{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 
-    padding-bottom: 45px;
-
-    width: 100%;
+    background: green;
+    height: 100%;
+}
+.name{
+    background: blue;
 }
