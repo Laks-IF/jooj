@@ -1,4 +1,4 @@
-/* line 1, ../../Desktop/lucas-portifolio/src/scss/reset.scss */
+/* line 1, ../../../Desktop/lucas-portfolio/src/scss/reset.scss */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,17 @@
   text-decoration: none;
 }
 
-/* line 3, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 10, ../../../Desktop/lucas-portfolio/src/scss/reset.scss */
+.p-large {
+  padding: 2rem 0;
+}
+
+/* line 13, ../../../Desktop/lucas-portfolio/src/scss/reset.scss */
+.p-small {
+  padding: 0.8rem 0;
+}
+
+/* line 3, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .logo {
   font-family: 'Galada', cursive;
   font-size: 2.5em;
@@ -17,17 +27,25 @@
   padding: 1.5rem 0;
 }
 
-/* line 10, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 10, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .main-header {
-  min-height: 500px;
+  min-height: 350px;
   background: url("../assets/image-1.jpeg") no-repeat fixed center center;
   background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 92.5px;
 }
 
-/* line 19, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+@media screen and (max-width: 560px) {
+  /* line 10, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+  .main-header {
+    margin-bottom: 75.5px;
+  }
+}
+
+/* line 23, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .cover-image {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -38,7 +56,7 @@
   z-index: 10;
 }
 
-/* line 29, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 33, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .main-hero {
   z-index: 30;
   width: 100%;
@@ -47,52 +65,67 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 12px;
 }
 
-/* line 39, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 49, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .name {
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+}
+
+@media screen and (max-width: 560px) {
+  /* line 49, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+  .name {
+    font-size: 1.5em;
+  }
+}
+
+/* line 58, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.hero-social {
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   display: block;
-  font-size: 2.5em;
-  color: white;
-}
-
-/* line 45, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
-.hero-social {
+  text-align: center;
   padding: 0.2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
 }
 
-/* line 50, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
-.icon-container {
+/* line 69, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.social-container {
   margin: 4px;
   padding: 8px;
   border-radius: 4px;
   background: #AE385E;
   color: #FFF;
   padding: 0.5rem 1rem;
+  width: 150px;
+  text-align: center;
 }
 
-/* line 59, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 80, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .hero-occupation {
   text-align: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: block;
   color: #f1f1f1;
   padding: 1.5rem 0;
 }
 
-/* line 65, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 86, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .photo-span {
   height: 105px;
 }
 
-/* line 69, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 90, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .photo-container {
   position: absolute;
   bottom: 0;
@@ -103,12 +136,68 @@
   border: 4px solid #AE385E;
 }
 
-/* line 79, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+/* line 100, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
 .photo {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   object-fit: cover;
   object-position: center;
+}
+
+@media screen and (max-width: 560px) {
+  /* line 100, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+  .photo {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+/* line 111, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.main-content {
+  min-height: 250px;
+  padding: 1rem;
+}
+
+/* line 116, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.primary-title {
+  font-size: 1.4em;
+  color: #444;
+  text-align: center;
+}
+
+/* line 121, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.secondary-title {
+  font-size: 1.2em;
+  color: #a9a9a9;
+  text-align: center;
+}
+
+/* line 126, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.paragraph-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 131, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.paragraph {
+  line-height: 1.6;
+  color: #a9a9a9;
+  max-width: 560px;
+}
+
+/* line 137, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.cards-container {
+  padding: 4rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 150px));
+  grid-gap: 1rem;
+}
+
+/* line 146, ../../../Desktop/lucas-portfolio/src/scss/styles.scss */
+.icon-container {
+  background: red;
+  height: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */

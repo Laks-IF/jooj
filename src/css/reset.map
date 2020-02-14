@@ -5,8 +5,8 @@
 		"../scss/reset.scss"
 	],
 	"sourcesContent": [
-		"*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    outline: none;\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1em;\r\n    text-decoration: none;\r\n}"
+		"*{\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    outline: none;\r\n    font-family: 'Poppins', sans-serif;\r\n    font-size: 1em;\r\n    text-decoration: none;\r\n}\r\n.p-large{\r\n    padding: 2rem 0;\r\n}\r\n.p-small{\r\n    padding: 0.8rem 0;\r\n}"
 	],
 	"names": [],
-	"mappings": ";AAAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,qBAAqB;EAClC,SAAS,EAAE,GAAG;EACd,eAAe,EAAE,IAAI;CACxB"
+	"mappings": ";AAAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,qBAAqB;EAClC,SAAS,EAAE,GAAG;EACd,eAAe,EAAE,IAAI;CACxB;;;AACD,AAAA,QAAQ,CAAA;EACJ,OAAO,EAAE,MAAM;CAClB;;;AACD,AAAA,QAAQ,CAAA;EACJ,OAAO,EAAE,QAAQ;CACpB"
 }
