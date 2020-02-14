@@ -1,1 +1,8 @@
-$primary: #9485;
+$primary: #AE385E;
+@mixin textNowrap {
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}

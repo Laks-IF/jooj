@@ -5,7 +5,7 @@
 		"../scss/variables.scss"
 	],
 	"sourcesContent": [
-		"$primary: #9485;"
+		"$primary: #AE385E;\r\n@mixin textNowrap {\r\n    text-align: center;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    display: block;\r\n}"
 	],
 	"names": [],
 	"mappings": ""

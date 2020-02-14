@@ -1,39 +1,84 @@
 @import "./variables.scss";
 @import "./reset.scss";
-
-.logo{
+.logo {
     font-family: 'Galada', cursive;
-    font-size: 2em;
+    font-size: 2.5em;
+    color: white;
+    padding: 1.5rem 0;
 }
-.main-header{
-    height: 350px;
-    background: #d9d9d9;
+
+.main-header {
+    min-height: 500px;
+    background: url("../assets/image-1.jpeg") no-repeat fixed center center;
+    background-size: cover;
     position: relative;
-
-    padding-bottom: 45px;
-}
-.main-hero{
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+}
 
+.cover-image {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.main-hero {
+    z-index: 30;
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
-.name{
+
+.name {
+    @include textNowrap;
+    font-size: 2.5em;
+    color: white;
 }
-.hero-social{
+
+.hero-social {
     padding: 0.2rem;
-    background: lightgreen;
     display: flex;
 }
-.icon-container{
-    margin: 4px;
 
+.icon-container {
+    margin: 4px;
     padding: 8px;
-    background: darkred;
-    border-radius: 5px;
+    border-radius: 4px;
+    background: $primary;
+    color: #FFF;
+    padding: 0.5rem 1rem;
 }
-.icon{
-    color: #fff;
+
+.hero-occupation {
+    @include textNowrap;
+    color: #f1f1f1;
+    padding: 1.5rem 0;
+}
+
+.photo-span {
+    height: 105px;
+}
+
+.photo-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid $primary;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
 }
