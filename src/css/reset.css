@@ -1,4 +1,4 @@
-/* line 1, ../../../Desktop/lucas-portfolio/src/scss/reset.scss */
+/* line 1, ../../Desktop/lucas-portifolio/src/scss/reset.scss */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,12 @@
   text-decoration: none;
 }
 
-/* line 10, ../../../Desktop/lucas-portfolio/src/scss/reset.scss */
+/* line 10, ../../Desktop/lucas-portifolio/src/scss/reset.scss */
 .p-large {
   padding: 2rem 0;
 }
 
-/* line 13, ../../../Desktop/lucas-portfolio/src/scss/reset.scss */
+/* line 13, ../../Desktop/lucas-portifolio/src/scss/reset.scss */
 .p-small {
   padding: 0.8rem 0;
 }
