@@ -205,7 +205,7 @@
 /* line 154, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
 .icon {
   height: 100%;
-  width: auto;
+  max-width: 100%;
 }
 
 /* line 159, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
