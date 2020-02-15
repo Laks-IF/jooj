@@ -73,6 +73,10 @@
     padding: 0.5rem 1rem;
     width: 150px;
     text-align: center;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background: rgb(164, 46, 84);
+    }
 }
 
 .hero-occupation {

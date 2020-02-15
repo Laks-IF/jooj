@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,9 +7,15 @@
     font-size: 1em;
     text-decoration: none;
 }
-.p-large{
+
+body {
+    overflow-x: hidden;
+}
+
+.p-large {
     padding: 2rem 0;
 }
-.p-small{
+
+.p-small {
     padding: 0.8rem 0;
 }
