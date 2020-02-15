@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 92.5px;
-    @media screen and (max-width: 560px){
+    @media screen and (max-width: 560px) {
         margin-bottom: 75.5px;
     }
 }
@@ -38,11 +38,9 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
-
     display: flex;
     align-items: center;
     flex-direction: column;
-
     padding: 1rem 12px;
 }
 
@@ -50,7 +48,7 @@
     text-align: center;
     font-size: 2.5em;
     color: white;
-    @media screen and (max-width: 560px){
+    @media screen and (max-width: 560px) {
         font-size: 1.5em;
     }
 }
@@ -102,55 +100,63 @@
     height: 125px;
     object-fit: cover;
     object-position: center;
-    @media screen and (max-width: 560px){
+    @media screen and (max-width: 560px) {
         width: 95px;
         height: 95px;
     }
 }
 
-.main-content{
+.main-content {
     min-height: 250px;
     padding: 1rem;
 }
 
-.primary-title{
+.primary-title {
     font-size: 1.4em;
     color: $color;
     text-align: center;
 }
-.secondary-title{
+
+.secondary-title {
     font-size: 1.2em;
     color: $color-secondary;
     text-align: center;
 }
-.paragraph-container{
+
+.paragraph-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.paragraph{
+
+.paragraph {
     line-height: 1.6;
     color: $color-secondary;
     max-width: 560px;
 }
 
-.cards-container{
+.cards-container {
     padding: 4rem 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 150px));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 170px));
     grid-gap: 2rem;
     justify-content: center;
 }
-.card-wrapper{
-    
-}
-.icon-container{
-    background: red;
-    height: 100px;
+
+.card-wrapper {}
+
+.icon-container {
+    height: 85px;
     display: flex;
     justify-content: center;
 }
-.main-footer{
+
+.icon {
+    height: 100%;
+    width: auto;
+}
+
+.main-footer {
     background: #222;
     padding: 2rem;
     text-align: center;
