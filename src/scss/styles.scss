@@ -1,7 +1,7 @@
 @import "./variables.scss";
 @import "./reset.scss";
 .logo {
-    font-family: 'Galada', cursive;
+    font-family: "Galada", cursive;
     font-size: 2.5em;
     color: white;
     padding: 1.5rem 0;
@@ -69,11 +69,11 @@
     padding: 8px;
     border-radius: 4px;
     background: $primary;
-    color: #FFF;
+    color: #fff;
     padding: 0.5rem 1rem;
     width: 150px;
     text-align: center;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
         background: rgb(164, 46, 84);
     }
@@ -131,12 +131,14 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 0 1rem;
 }
 
 .paragraph {
     line-height: 1.6;
     color: $color-secondary;
     max-width: 560px;
+    text-align: center;
 }
 
 .cards-container {
