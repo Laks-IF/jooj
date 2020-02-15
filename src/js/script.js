@@ -1,5 +1,4 @@
-const footer = document.getElementsByClassName("main-footer")[0];
-footer.textContent = footer.textContent + new Date().getFullYear();
+AOS.init();
 
 const stepsWrappers = document.getElementsByClassName("step-wrapper");
 for (let step of stepsWrappers) {
@@ -12,3 +11,6 @@ for (let step of stepsWrappers) {
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+const footer = document.getElementsByClassName("main-footer")[0];
+footer.textContent = footer.textContent + new Date().getFullYear();
