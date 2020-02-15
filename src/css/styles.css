@@ -129,11 +129,11 @@
 .photo-container {
   position: absolute;
   bottom: 0;
+  border: 3px solid #AE385E;
   left: 50%;
   transform: translate(-50%, 50%);
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #AE385E;
 }
 
 /* line 98, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
@@ -214,6 +214,34 @@
   padding: 2rem;
   text-align: center;
   color: #f9f9f9;
+}
+
+/* line 166, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+.steps-container {
+  padding: 4rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 250px));
+  grid-gap: 2rem;
+  justify-content: center;
+}
+
+/* line 174, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+.step-wrapper {
+  padding: 2rem;
+  border-radius: 3px;
+  box-shadow: 0 2px 20px lightgrey;
+}
+
+/* line 180, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+.step-number {
+  font-size: 3em;
+  color: #fff;
+}
+
+/* line 185, ../../Desktop/lucas-portifolio/src/scss/styles.scss */
+.step-text {
+  line-height: 1.4;
+  color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -88,11 +88,11 @@
 .photo-container {
     position: absolute;
     bottom: 0;
+    border: 3px solid $primary;
     left: 50%;
     transform: translate(-50%, 50%);
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid $primary;
 }
 
 .photo {
@@ -161,4 +161,28 @@
     padding: 2rem;
     text-align: center;
     color: #f9f9f9;
+}
+
+.steps-container {
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 250px));
+    grid-gap: 2rem;
+    justify-content: center;
+}
+
+.step-wrapper {
+    padding: 2rem;
+    border-radius: 3px;
+    box-shadow: 0 2px 20px lightgrey;
+}
+
+.step-number {
+    font-size: 3em;
+    color: #fff;
+}
+
+.step-text {
+    line-height: 1.4;
+    color: #fff;
 }
