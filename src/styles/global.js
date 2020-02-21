@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-tiger-transition/styles/main.min.css';
+
 const GlobalStyle = createGlobalStyle`
   /* Default */
   * {
@@ -9,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Ubuntu', sans-serif !important;
     text-decoration: none;
+  }
+  html, body, #root{
+    width: 100%;
+    height: 100%;
   }
   body {
     background-color: #f5f5f5;
