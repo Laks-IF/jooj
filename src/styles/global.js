@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     --color: #f9f9f9;
     --color-light: #d9d9d9;
   }
+  ::-webkit-scrollbar { display: none; }
   /* Toast Notification */
   .toast-notification-error,
   .toast-notification-info,

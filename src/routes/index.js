@@ -5,25 +5,25 @@ import { ConnectedRouter } from 'connected-react-router';
 
 import Home from '@/pages/Home';
 import About from '@/pages/About';
-import Header from '@/components/Header';
+
+import Nav from '@/components/Nav';
 
 import history from './history';
-import './animations';
+import './registerTransitions';
 
 const Routes = () => (
   <ConnectedRouter history={history}>
-    <Header />
-    <>
-      <Navigation>
-        <Route exact path="/" screen>
-          <Home />
-        </Route>
-        <Route exact path="/about" screen>
-          <About />
-        </Route>
-      </Navigation>
-    </>
+    <Navigation>
+      <Route exact path="/" screen>
+        <Home />
+      </Route>
+      <Route exact path="/about" screen>
+        <About />
+      </Route>
+      <Route exact path={['/', '/about']} screen>
+        <Nav />
+      </Route>
+    </Navigation>
   </ConnectedRouter>
 );
-
 export default Routes;
