@@ -1,16 +1,14 @@
 import React from 'react';
 
-import Hello from '@/components/Hello';
-import Toast from '@/utils/toast';
-
-import { StyledContainer } from './styles';
+import { Link } from 'react-router-dom';
+// import * as S from './styles';
 
 function Home() {
-  Toast.success('Hello, dev! How are you?');
   return (
-    <StyledContainer>
-      <Hello />
-    </StyledContainer>
+    <>
+      <h1>Home Page</h1>
+      <Link to="/about">Ir para a About</Link>
+    </>
   );
 }
 

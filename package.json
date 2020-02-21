@@ -8,7 +8,8 @@
         "test": "craco test",
         "prettier": "prettier --write **/*.{js,jsx,json}",
         "lint": "eslint **/*.{js,jsx}",
-        "format": "yarn prettier && yarn lint --fix"
+        "format": "yarn prettier && yarn lint --fix",
+        "commit": "git-cz"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -61,7 +62,9 @@
         "react-redux": "^7.2.0",
         "react-router-dom": "^5.1.2",
         "react-scripts": "^3.4.0",
+        "react-tiger-transition": "^4.1.2",
         "react-toastify": "^5.5.0",
+        "react-transition-group": "^4.3.0",
         "redux": "^4.0.5",
         "redux-saga": "^1.1.3",
         "redux-thunk": "^2.3.0",

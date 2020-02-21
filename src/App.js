@@ -2,6 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { ToastContainer } from 'react-toastify';
+
+import 'react-tiger-transition/styles/main.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import store from './store';
