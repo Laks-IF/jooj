@@ -17,9 +17,16 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   body {
-    background-color: #f5f5f5;
+    background-color: rgb(38, 50, 56);
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+
+    --primary: #FF9F00;
+    --primary-dark: #FF5821;
+    --background: rgb(38, 50, 56);
+    --content: rgb(68, 80, 86);
+    --color: #f9f9f9;
+    --color-light: #d9d9d9;
   }
   /* Toast Notification */
   .toast-notification-error,
