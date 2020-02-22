@@ -13,12 +13,6 @@ import history from './history';
 import './registerTransitions';
 
 const useStyles = makeStyles({
-  nav: {
-    zIndex: 200,
-    top: 0,
-    bottom: 'auto',
-    height: 64,
-  },
   hide: {
     visibility: 'hidden',
     opacity: 0,
@@ -45,7 +39,7 @@ const Routes = () => {
         <Route
           transitionProps={{
             style: {
-              height: '120px',
+              height: '48px',
             },
             ...hideInsteadOfUnmount,
           }}

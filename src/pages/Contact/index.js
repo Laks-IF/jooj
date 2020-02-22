@@ -8,8 +8,12 @@ import Layout from '@/components/Layout';
 function Contact() {
   return (
     <Layout>
-      <h1 style={{ color: '#fff' }}>Contact Page</h1>
-      <Link style={{ color: '#fff' }} to="/about" transition="flip-left">
+      <h1 style={{ color: 'var(--color)' }}>Contact Page</h1>
+      <Link
+        style={{ color: 'var(--color)' }}
+        to="/about"
+        transition="flip-left"
+      >
         Ir para a About
       </Link>
     </Layout>

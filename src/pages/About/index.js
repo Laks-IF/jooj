@@ -13,8 +13,8 @@ function About() {
 
   return (
     <Layout>
-      <h1 style={{ color: '#fff' }}>{message}</h1>
-      <Link style={{ color: '#fff' }} to="/" transition="flip-left">
+      <h1 style={{ color: 'var(--color)' }}>{message}</h1>
+      <Link style={{ color: 'var(--color)' }} to="/" transition="flip-left">
         To home page
       </Link>
     </Layout>

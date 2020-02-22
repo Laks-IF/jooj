@@ -5,28 +5,37 @@ import 'react-tiger-transition/styles/main.min.css';
 const GlobalStyle = createGlobalStyle`
   /* Default */
   * {
-    box-sizing: border-box;
     margin: 0;
     outline: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif !important;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
   }
   html, body, #root{
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
   body {
-    background-color: rgb(38, 50, 56);
+    background-color: #f1f1f1;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
 
     --primary: #FF9F00;
     --primary-dark: #FF5821;
-    --background: rgb(38, 50, 56);
-    --content: rgb(68, 80, 86);
-    --color: #f9f9f9;
-    --color-light: #d9d9d9;
+    --background: #f1f1f1;
+    --content: #fff;
+    --color: #333;
+    --color-light: #777;
+    --max-width: 1200px;
   }
   ::-webkit-scrollbar { display: none; }
   /* Toast Notification */

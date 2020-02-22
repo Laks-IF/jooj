@@ -10,8 +10,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import Header from '../Header';
-
 export default function Nav() {
   const tabs = routePaths;
 
@@ -37,21 +35,18 @@ export default function Nav() {
   }, []);
 
   return (
-    <>
-      <Header />
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleTabChange} centered>
-          {tabs.map((tab) => (
-            <Tab
-              component={Link}
-              to={tab.route}
-              transition="flip-left"
-              key={tab.label}
-              label={tab.label}
-            />
-          ))}
-        </Tabs>
-      </AppBar>
-    </>
+    <AppBar position="static">
+      <Tabs value={value} onChange={handleTabChange} centered>
+        {tabs.map((tab) => (
+          <Tab
+            component={Link}
+            to={tab.route}
+            transition="flip-left"
+            key={tab.label}
+            label={tab.label}
+          />
+        ))}
+      </Tabs>
+    </AppBar>
   );
 }
