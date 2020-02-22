@@ -1,43 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { useHistory } from 'react-router-dom';
 
 import { Link } from 'react-tiger-transition';
+
+import routePaths from '@/utils/routePaths';
 
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-const tabs = [
-  {
-    label: 'Principal',
-    route: '/',
-  },
-  {
-    label: 'About',
-    route: '/about',
-  },
-];
+import Header from '../Header';
 
 export default function Nav() {
-  const [value, setValue] = useState(tabs[0].label);
+  const tabs = routePaths;
+
+  const history = useHistory();
+
+  const [value, setValue] = useState(
+    getIndexOfActiveTab(history.location.pathname),
+  );
 
   function handleTabChange(e, newValue) {
     setValue(newValue);
   }
 
+  function getIndexOfActiveTab(pathname) {
+    const [active] = tabs.filter((tab) => tab.route === pathname);
+    return active.index;
+  }
+
+  useEffect(() => {
+    history.listen((route) =>
+      handleTabChange(null, getIndexOfActiveTab(route.pathname)),
+    );
+  }, []);
+
   return (
-    <AppBar position="static">
-      <Tabs value={value} onChange={handleTabChange} centered>
-        {tabs.map((tab) => (
-          <Tab
-            component={Link}
-            to={tab.route}
-            transition="glide-right"
-            key={tab.label}
-            label={tab.label}
-            value={tab.label}
-          />
-        ))}
-      </Tabs>
-    </AppBar>
+    <>
+      <Header />
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleTabChange} centered>
+          {tabs.map((tab) => (
+            <Tab
+              component={Link}
+              to={tab.route}
+              transition="flip-left"
+              key={tab.label}
+              label={tab.label}
+            />
+          ))}
+        </Tabs>
+      </AppBar>
+    </>
   );
 }

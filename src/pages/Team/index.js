@@ -5,15 +5,15 @@ import { Link } from 'react-tiger-transition';
 import Layout from '@/components/Layout';
 // import * as S from './styles';
 
-function Home() {
+function Team() {
   return (
     <Layout>
-      <h1 style={{ color: '#fff' }}>Home Page</h1>
-      <Link style={{ color: '#fff' }} to="/team" transition="glide-left">
-        Ir a team page
+      <h1 style={{ color: '#fff' }}>Team Page</h1>
+      <Link style={{ color: '#fff' }} to="/contact" transition="flip-left">
+        Ir para a contato
       </Link>
     </Layout>
   );
 }
 
-export default Home;
+export default Team;

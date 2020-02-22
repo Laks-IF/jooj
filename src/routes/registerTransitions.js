@@ -1,9 +1,6 @@
-import { glide } from 'react-tiger-transition';
+import { flip } from 'react-tiger-transition';
 
-glide({
-  name: 'glide-left',
-});
-glide({
-  name: 'glide-right',
-  direction: 'right',
+flip({
+  name: 'flip-left',
+  duration: 300,
 });
