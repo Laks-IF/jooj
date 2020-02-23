@@ -39,7 +39,7 @@ const Routes = () => {
         <Route
           transitionProps={{
             style: {
-              height: '48px',
+              height: '75px',
             },
             ...hideInsteadOfUnmount,
           }}

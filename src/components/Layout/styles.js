@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LayoutWrapper = styled.div`
-  padding-top: 48px;
+  padding-top: 75px;
   display: flex;
   justify-content: center;
   width: 100%;
