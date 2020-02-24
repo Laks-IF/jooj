@@ -10202,13 +10202,6 @@ react-scripts@^3.4.0:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-scroll-parallax@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/react-scroll-parallax/-/react-scroll-parallax-2.3.1.tgz#bee6bded010e53c9cf56211b06081c4e3efb3f73"
-  integrity sha512-Mz8DGdU3UFCOCBE88pKmLxo0jRMAdXqVPKBixJdzHdctmulqUW60ujog+cm/DXTULX96udjSkJ+WFOHrXKcA+Q==
-  dependencies:
-    prop-types "^15.5.10"
-
 react-spring@^8.0.27:
   version "8.0.27"
   resolved "https://registry.npmjs.org/react-spring/-/react-spring-8.0.27.tgz#97d4dee677f41e0b2adcb696f3839680a3aa356a"

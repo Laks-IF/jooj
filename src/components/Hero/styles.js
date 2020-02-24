@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { animated as a } from 'react-spring';
 
 export const Container = styled.div`
@@ -33,14 +33,20 @@ export const TypeContainer = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+`;
+export const TypeContent = styled.div`
+  width: 100%;
+  max-width: 960px;
   span {
     color: #fff;
     font-size: 1.75em;
     text-align: center;
+    @media screen and (max-width: 650px) {
+      font-size: 1.5em;
+    }
   }
 `;

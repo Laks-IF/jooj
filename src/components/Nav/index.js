@@ -36,13 +36,7 @@ export default function Nav() {
 
   return (
     <AppBar style={{ display: 'flex' }} position="static">
-      <Toolbar style={{ justifyContent: 'space-between' }}>
-        <img
-          style={{ borderRadius: 12, marginRight: '12px' }}
-          height="50"
-          src={Logo}
-          alt="Logo"
-        />
+      <Toolbar style={{ justifyContent: 'center' }}>
         <Tabs variant="scrollable" value={value} onChange={handleTabChange}>
           {tabs.map((tab) => (
             <Tab
