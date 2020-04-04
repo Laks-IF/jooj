@@ -1,7 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+require('dotenv/config');
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const express = require('express');
+const app = express();
+const cors = require("cors");
+
+require("./database");
+
+app.use(cors());
+app.use(express.json());
+
+require("./routes")(app);
+
+app.listen(process.env.PORT || 8080);
