@@ -8,4 +8,6 @@ mongo.connect(DB_URL, {
     useFindAndModify: false
 });
 
+mongo.set('useCreateIndex', true);
+
 module.exports = mongo;
