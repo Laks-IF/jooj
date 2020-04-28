@@ -1,17 +1,12 @@
 import React from 'react';
 
-import Hello from '@/components/Hello';
 import Toast from '@/utils/toast';
 
-import { StyledContainer } from './styles';
+import * as S from './styles';
 
 function Home() {
   Toast.success('Hello, dev! How are you?');
-  return (
-    <StyledContainer>
-      <Hello />
-    </StyledContainer>
-  );
+  return <h1>Funcinou sim</h1>;
 }
 
 export default Home;

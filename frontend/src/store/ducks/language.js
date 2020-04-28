@@ -4,9 +4,7 @@ import Immutable from 'seamless-immutable';
 /* Types & Action Creators */
 
 const { Types, Creators } = createActions({
-  getLanguageRequest: [],
-  getLanguageSuccess: ['data'],
-  getLanguageFailure: [],
+  setLang: ['newLang'],
 });
 
 export const LanguageTypes = Types;
@@ -15,29 +13,30 @@ export default Creators;
 /* Initial State */
 
 export const INITIAL_STATE = Immutable({
-  loading: false,
-  data: [],
-  error: false,
+  lang: 'en',
 });
 
 /* Reducers */
 
-const getLanguageRequest = (state) => state.merge({
-  ...state,
-  loading: true,
-});
+const getLanguageRequest = (state) =>
+  state.merge({
+    ...state,
+    loading: true,
+  });
 
-const getLanguageSuccess = (state, { data }) => state.merge({
-  data,
-  loading: false,
-  error: false,
-});
+const getLanguageSuccess = (state, { data }) =>
+  state.merge({
+    data,
+    loading: false,
+    error: false,
+  });
 
-const getLanguageFailure = (state) => state.merge({
-  ...state,
-  error: true,
-  loading: false,
-});
+const getLanguageFailure = (state) =>
+  state.merge({
+    ...state,
+    error: true,
+    loading: false,
+  });
 
 /* Reducers to types */
 
