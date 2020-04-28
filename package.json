@@ -1,12 +1,13 @@
 {
-    "name": "project-name",
+    "name": "flip",
     "version": "1.0.0",
-    "description": "project-description",
+    "description": "📚 Join and make more with your classroom, a cooperative and minimalist To Do List App of your school/university https://laks-if.github.io/flip/",
     "main": "index.js",
-    "repository": "https://github.com/LaksCastro/project-repo-name",
+    "repository": "https://github.com/Laks-IF/flip",
     "author": "LaksCastro",
     "license": "MIT",
     "private": false,
+    "homepage": "https://laks-if.github.io/flip",
     "scripts": {
         "prettier": "prettier --write **/*.{js,jsx,json}",
         "lint": "eslint **/*.{js,jsx}",

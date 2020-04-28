@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     outline: 0;
     padding: 0;
+    border: none;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Montserrat', sans-serif;
   }
   body.light{
     background-color: #FFFFFF;
@@ -16,14 +20,14 @@ const GlobalStyle = createGlobalStyle`
     --background-light: #FFFFFF;
     --background-dark: #EFF1F3;
 
-    --color: rgb(157, 165, 180);
-    --color-light: rgb(214, 216, 218);
-    --color-dark: #395B7D;
+    --color: #333;
+    --color-light: #555;
+    --color-dark: #222;
     
-    --error: ${error_light};
-    --info: ${info_light};
-    --warning: ${warning_light};
-    --success: ${success_light};
+    --error: ${colors.error_light};
+    --info: ${colors.info_light};
+    --warning: ${colors.warning_light};
+    --success: ${colors.success_light};
   }
   body.dark{
     background-color: #24292E;
@@ -36,21 +40,28 @@ const GlobalStyle = createGlobalStyle`
     --color-light: rgb(214, 216, 218);
     --color-dark: #395B7D;
     
-    --error: ${error_dark};
-    --info: ${info_dark};
-    --warning: ${warning_dark};
-    --success: ${success_dark};
+    --error: ${colors.error_dark};
+    --info: ${colors.info_dark};
+    --warning: ${colors.warning_dark};
+    --success: ${colors.success_dark};
   }
   body {
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
   }
-  body, input, textarea {
-    font-family: 'Ubuntu', sans-serif !important;
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
   }
-  a, button {
-    outline: none;
+  ::-webkit-scrollbar {
+	  width: 6px;
+	  background-color: #F5F5F5;
   }
+  ::-webkit-scrollbar-thumb {
+	  background-color: #000000;
+  }
+
 
   /* Toast Notification */
   .toast-notification-error,
