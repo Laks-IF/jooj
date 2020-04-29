@@ -1,11 +1,12 @@
-import sdk from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
 import config from "./config";
 
-const firebase = sdk.initializeApp(config);
-const db = sdk.database();
+firebase.initializeApp(config);
 
-sdk.analytics();
+const db = firebase.firestore();
 
 export { db };
 

@@ -20,6 +20,6 @@
   ],
   "start_url": "/flip",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#24292E",
+  "background_color": "#24292E"
 }
