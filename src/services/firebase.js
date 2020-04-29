@@ -9,10 +9,14 @@ const auth = async () => {
 
     const result = await firebase.auth().signInWithPopup(provider);
 
+    // TO USE GOOGLE API
     // This gives you a Google Access Token. You can use it to access the Google API.
-    const token = result.credential.accessToken;
+    // const token = result.credential.accessToken;
+
     // The signed-in user info.
-    const { uid, displayName, photoURL, email } = result.user;
+    const { user } = result;
+
+    return user || null;
   } catch (error) {
     // Handle Errors here.
     const errorCode = error.code;
@@ -30,6 +34,18 @@ const auth = async () => {
   }
 };
 
+const getUser = async () => {
+  const user = await firebase.auth().currentUser;
+
+  return user;
+};
+
+const isAuth = () => {
+  return !!getUser();
+};
+
 export default {
   auth,
+  getUser,
+  isAuth,
 };

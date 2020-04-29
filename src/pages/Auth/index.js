@@ -1,7 +1,9 @@
 import React from "react";
 
+import * as S from "./styles";
+
 export default () => (
-  <div>
-    <h1>Auth Page</h1>
-  </div>
+  <S.AuthWrapper>
+    <h1 className="font-normal">Auth Page</h1>
+  </S.AuthWrapper>
 );
