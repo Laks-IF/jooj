@@ -1,12 +1,7 @@
-import firebase from "../firebase";
+import firebase from "../../../firebase";
 
-const auth = async () => {
+const auth = async (provider) => {
   try {
-    console.log(firebase.auth.GoogleAuthProvider);
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    console.log(provider);
-
     const result = await firebase.auth().signInWithPopup(provider);
 
     // TO USE GOOGLE API
@@ -15,6 +10,8 @@ const auth = async () => {
 
     // The signed-in user info.
     const { user } = result;
+
+    console.log(user);
 
     return user || null;
   } catch (error) {
