@@ -6,10 +6,11 @@ import GlobalStyle from "./styles";
 
 import Application from "./application";
 
-// Nesses Fragments vai o provider
-export default () => (
+const App = () => (
   <Provider>
     <GlobalStyle />
     <Application />
   </Provider>
 );
+
+export default App;

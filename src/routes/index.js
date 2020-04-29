@@ -7,7 +7,7 @@ import Auth from "../pages/Auth";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
-export default () => (
+const Routes = () => (
   <Router>
     <Switch>
       <PublicRoute path="/auth" exact component={Auth} />
@@ -16,3 +16,5 @@ export default () => (
     </Switch>
   </Router>
 );
+
+export default Routes;
