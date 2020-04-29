@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Main Metatags-->
+  <meta name="language" content="english">
+  <meta http-equiv="content-type" content="text/html">
+  <meta name="author" content="Laks Castro">
+  <meta name="designer" content="Laks Castro">
+  <meta name="publisher" content="Laks Castro">
+  <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+  <meta charset="utf-8" />
+  <meta name="description"
+    content="📚 Join and make more with your classroom, a cooperative and minimalist To Do List App of your school/university https://laks-if.github.io/flip/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Status Bar Color  -->
+  <meta name="theme-color" content="#24292E">
+  <meta name="msapplication-navbutton-color" content="#24292E">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#24292E">
+
+  <!-- Manifest needed for PWA and favicon  -->
+  <link rel="shortcut icon" href="/favicon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Open Graph data / Facebook Card data -->
+  <meta property="og:title" content="Flip" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://laks-if.github.io/flip" />
+  <meta property="og:image" content="/flip-interface-screenshot.png" />
+  <meta property="og:image:alt" content="Flip Interface Screenshot" />
+  <meta property="og:description"
+    content="📚 Join and make more with your classroom, a cooperative and minimalist To Do List App of your school/university https://laks-if.github.io/flip/" />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@lakscastro" />
+
+  <!--Search Engine Optimization Meta Tags-->
+  <meta name="keywords"
+    content="to,do,list,cooperative,flip,laks,castro,if,ifro,ro,ui,react,js,javascript,school,university,team,To,Do,List,Cooperative,Flip,Laks,Castro,If,Ifro,Ro,Ui,React,Js,Javascript,School,University,Team">
+  <meta name="robots" content="index,follow">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="web">
+  <meta name="robots" content="noodp">
+
+
+  <!--Meta Tags for HTML pages on Mobile-->
+  <meta name="format-detection" content="telephone=yes" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--http-equiv Tags-->
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+
+  <!-- Font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+  <!-- Title  -->
+  <title>Flip - A Cooperative To Do List</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app!</noscript>
+  <div id="root"></div>
+  <script type="text/javascript">
+    (function () {
+      window.__onThemeChange = function () { };
+      function setTheme(newTheme) {
+        window.__theme = newTheme;
+        preferredTheme = newTheme;
+        document.body.className = newTheme;
+        window.__onThemeChange(newTheme);
+      }
+      var preferredTheme;
+      try {
+        preferredTheme = localStorage.getItem("theme");
+      } catch (err) { }
+      window.__setPreferredTheme = function (newTheme) {
+        setTheme(newTheme);
+        try {
+          localStorage.setItem("theme", newTheme);
+        } catch (err) { }
+      };
+      setTheme(preferredTheme || "dark");
+    })();
+  </script>
+</body>
+
+</html>
