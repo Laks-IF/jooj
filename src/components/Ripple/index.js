@@ -2,6 +2,9 @@ import React, { useState, useLayoutEffect } from "react";
 
 import * as S from "./styles";
 
+// =================================
+// HOOK MANAGE LOGIC
+// =================================
 const useDebouncedRippleCleanUp = (rippleCount, duration, cleanUpFunction) => {
   useLayoutEffect(() => {
     let bounce = null;
@@ -18,7 +21,10 @@ const useDebouncedRippleCleanUp = (rippleCount, duration, cleanUpFunction) => {
   }, [rippleCount, duration, cleanUpFunction]);
 };
 
-export default ({ duration = 850, color = "#fff" }) => {
+// =================================
+// RIPPLE COMPONENT
+// =================================
+const Ripple = ({ duration = 850, color = "#fff" }) => {
   const [rippleArray, setRippleArray] = useState([]);
 
   useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
@@ -65,3 +71,5 @@ export default ({ duration = 850, color = "#fff" }) => {
     </S.RippleContainer>
   );
 };
+
+export default Ripple;

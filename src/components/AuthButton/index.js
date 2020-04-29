@@ -1,9 +1,18 @@
 import React from "react";
 
+// ========================================
+// COMPONENTES IMPORTS
+// ========================================
 import Ripple from "../Ripple";
 
+// ========================================
+// FIREBASE SERVICE
+// ========================================
 import firebase_service from "../../services/firebase";
 
+// ========================================
+// ALL STYLES IMPORTED AS S OBJECT
+// ========================================
 import * as S from "./styles";
 
 const AuthButton = ({ method: { provider, icon: Icon, color, name } }) => {

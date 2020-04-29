@@ -1,17 +1,38 @@
 import React from "react";
 
-import AuthButton from "../../components/AuthButton";
-
+// ====================
+// ASSETS IMPORTS
+// ====================
 import Logo from "../../assets/browser-logo-512.png";
 
+// ====================
+// LIBRARY IMPORTS
+// ====================
 import { FaTwitter, FaGoogle, FaGithub, FaMicrosoft } from "react-icons/fa";
 
+// ========================================
+// COMPONENTES IMPORTS
+// ========================================
+import AuthButton from "../../components/AuthButton";
+
+// ========================================
+// UTILS IMPORTS
+// ========================================
 import { firstLetterUpper } from "../../utils";
 
+// ========================================
+// FIREBASE SERVICE
+// ========================================
 import firebase_service from "../../services/firebase";
 
+// ========================================
+// ALL STYLES IMPORTED AS S OBJECT
+// ========================================
 import * as S from "./styles";
 
+// ========================================
+// ALL AVAILABLE METHODS
+// ========================================
 const methods = {
   google: {
     provider: firebase_service.available_auth_methods.GOOGLE,
@@ -43,7 +64,7 @@ const AuthPage = () => (
     </S.AuthTitle>
     <S.AuthDescription>
       Suas informações são utilizadas para e somente identificação, não podemos
-      divulgar nada em seu nome, não, também não posso te enviar pack do pé
+      divulgar nada em seu nome, é verdade esse bilhete.
     </S.AuthDescription>
     <S.AuthButtonsWrapper>
       {Object.keys(methods).map((key) => (
