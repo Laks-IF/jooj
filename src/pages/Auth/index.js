@@ -47,7 +47,10 @@ const AuthPage = () => (
     </S.AuthDescription>
     <S.AuthButtonsWrapper>
       {Object.keys(methods).map((key) => (
-        <AuthButton method={{ ...methods[key], name: firstLetterUpper(key) }} />
+        <AuthButton
+          key={`auth__button__${key}`}
+          method={{ ...methods[key], name: firstLetterUpper(key) }}
+        />
       ))}
     </S.AuthButtonsWrapper>
   </S.AuthWrapper>

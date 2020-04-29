@@ -16,6 +16,9 @@ export const AuthWrapper = styled.div`
   @media screen and (max-width: 379px) {
     height: max(527px, 100vh);
   }
+  @media screen and (max-width: 190px) {
+    height: max(723px, 100vh);
+  }
 `;
 
 export const AuthButtonsWrapper = styled.div`

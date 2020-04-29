@@ -26,6 +26,8 @@ export const AuthButton = styled.button`
 
   @media screen and (max-width: 379px) {
     padding: 14px;
+    min-width: 50px;
+    justify-content: center;
   }
 `;
 export const AuthButtonText = styled.span`
