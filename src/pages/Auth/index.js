@@ -1,16 +1,16 @@
 import React from "react";
 
-import Ripple from "../../components/Ripple";
+import AuthButton from "../../components/AuthButton";
 
 import Logo from "../../assets/browser-logo-512.png";
 
 import { FaTwitter, FaGoogle, FaGithub, FaMicrosoft } from "react-icons/fa";
 
+import { firstLetterUpper } from "../../utils";
+
 import firebase_service from "../../services/firebase";
 
 import * as S from "./styles";
-
-import { firstLetterUpper } from "../../utils";
 
 const methods = {
   google: {
@@ -35,7 +35,7 @@ const methods = {
   },
 };
 
-export default () => (
+const AuthPage = () => (
   <S.AuthWrapper>
     <S.AuthLogo src={Logo} alt="Flip Logotipo, imagem do aplicativo" />
     <S.AuthTitle>
@@ -46,25 +46,11 @@ export default () => (
       divulgar nada em seu nome, não, também não posso te enviar pack do pé
     </S.AuthDescription>
     <S.AuthButtonsWrapper>
-      {Object.keys(methods).map((key) => {
-        const { provider, icon: Icon, color } = methods[key];
-        return (
-          <S.AuthButton
-            key={`auth__button__${key}`}
-            color={color}
-            onClick={() => firebase_service.auth(provider)}
-            className="font-normal"
-          >
-            <S.AuthIconWrapper>
-              <Icon />
-            </S.AuthIconWrapper>
-            <S.AuthButtonText>
-              Login com {firstLetterUpper(key)}
-            </S.AuthButtonText>
-            <Ripple color="var(--ripple)" duration={1000} />
-          </S.AuthButton>
-        );
-      })}
+      {Object.keys(methods).map((key) => (
+        <AuthButton method={{ ...methods[key], name: firstLetterUpper(key) }} />
+      ))}
     </S.AuthButtonsWrapper>
   </S.AuthWrapper>
 );
+
+export default AuthPage;
