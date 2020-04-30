@@ -11,24 +11,54 @@ const getTimestamp = () => ({
 });
 
 const getUserData = async (resource, data, uid) => {
+  // ===================================================
+  // GET FIREBASE REFERENCES
+  // ===================================================
   const resourceRef = db.collection(resource);
 
   let documentRef = resourceRef.doc(uid);
 
+  // ===================================================
+  // IF USER EXISTS, GET CURRENT DATA, ELSE, SET AS {}
+  // ===================================================
   let snapshot = await documentRef.get();
+  snapshot = snapshot ? snapshot.data() : {};
 
+  // ===================================================
+  // IF USER EXISTS, INITIAL IS {}  ELSE, INITIAL IS CURRENT TIME
+  // ===================================================
   const initialObject = snapshot.exists ? {} : getTimestamp();
 
-  const userData = { ...initialObject, ...userDefaultData, ...data };
+  // ===================================================
+  // MERGE CURRENT DATA IF EXISTS WITH UPDATED DATA
+  // ===================================================
+  const userData = {
+    ...initialObject,
+    ...userDefaultData,
+    ...data,
+    ...snapshot,
+  };
+
+  // ===================================================
+  // FIREBASE .SET() METHOD OPTIONS TO ALLOW MERGE
+  // ===================================================
   const options = {
     merge: true,
   };
 
-  documentRef = resourceRef.doc(uid);
+  // ===================================================
+  // ALWAYS USER OPEN APP, UPDATE YOUR DATA IN FIRESTORE
+  // ===================================================
   await documentRef.set(userData, options);
 
-  snapshot = await resourceRef.doc(uid).get();
-  console.log("AEOEOAKAOEKEAKO");
+  // ===================================================
+  // THEN GET UPDATED SNAPSHOT
+  // ===================================================
+  snapshot = await documentRef.get();
+
+  // ===================================================
+  // RETURN DATA OF UPDATED SNAPSHOT
+  // ===================================================
   return snapshot.data();
 };
 

@@ -26,8 +26,7 @@ const Application = ({ dispatch }) => {
           user.uid
         );
       }
-      console.log("passou por 1");
-      console.log(!!isAuth);
+
       dispatch(
         setUserAction({
           isAuth: !!user,

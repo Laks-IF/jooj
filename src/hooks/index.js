@@ -13,7 +13,6 @@ const useIsAuth = () => {
     store: { auth },
   } = useStore();
 
-  console.log(auth.isAuth);
   return auth.isAuth;
 };
 
