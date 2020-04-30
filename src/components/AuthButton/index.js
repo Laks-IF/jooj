@@ -1,6 +1,11 @@
 import React from "react";
 
 // ========================================
+// LIBRARY IMPORTS
+// ========================================
+import { toast } from "react-toastify";
+
+// ========================================
 // COMPONENTES IMPORTS
 // ========================================
 import Ripple from "../Ripple";
@@ -22,7 +27,13 @@ const AuthButton = ({
   return (
     <S.AuthButton
       color={color}
-      onClick={() => firebase_service.auth(provider)}
+      onClick={() => {
+        try {
+          firebase_service.auth(provider);
+        } catch (error) {
+          toast.success(error.message);
+        }
+      }}
       className="font-normal"
       {...rest}
     >

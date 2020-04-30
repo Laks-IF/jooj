@@ -12,19 +12,21 @@ const auth = async (provider) => {
 
     return user || null;
   } catch (error) {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
+    const error_code = error.code;
+    const error_message = error.message;
     const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
 
-    console.log("erro aqui");
-    console.log(errorCode);
-    console.log(errorMessage);
-    console.log(email);
-    console.log(credential);
+    console.log(
+      "Caso tenha aberto esta aba, por favor, copie e envie este erro ao desenvolvedor do aplicativo: "
+    );
+    console.log({
+      error_code,
+      error_message,
+      email,
+      credential,
+    });
+    throw "Ocorreu um erro ao fazer login, tente novamente";
   }
 };
 

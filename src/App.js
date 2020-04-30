@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ToastContainer } from "react-toastify";
+
 import Provider from "./store";
 
 import GlobalStyle from "./styles";
@@ -10,6 +12,7 @@ const App = () => (
   <Provider>
     <GlobalStyle />
     <Application />
+    <ToastContainer />
   </Provider>
 );
 
