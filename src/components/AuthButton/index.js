@@ -1,11 +1,6 @@
 import React from "react";
 
 // ========================================
-// LIBRARY IMPORTS
-// ========================================
-import { toast } from "react-toastify";
-
-// ========================================
 // COMPONENTES IMPORTS
 // ========================================
 import Ripple from "../Ripple";
@@ -16,6 +11,11 @@ import Ripple from "../Ripple";
 import firebase_service from "../../services/firebase";
 
 // ========================================
+// UTILS IMPORTS
+// ========================================
+import toast from "../../utils/toast";
+
+// ========================================
 // ALL STYLES IMPORTED AS S OBJECT
 // ========================================
 import * as S from "./styles";
@@ -24,16 +24,19 @@ const AuthButton = ({
   method: { provider, icon: Icon, color, name },
   ...rest
 }) => {
+  const handleLogin = async () => {
+    try {
+      await firebase_service.auth(provider);
+    } catch (error) {
+      if (!error.render_error) return;
+
+      toast[error.toast || "error"](error.message);
+    }
+  };
   return (
     <S.AuthButton
       color={color}
-      onClick={() => {
-        try {
-          firebase_service.auth(provider);
-        } catch (error) {
-          toast.success(error.message);
-        }
-      }}
+      onClick={handleLogin}
       className="font-normal"
       {...rest}
     >

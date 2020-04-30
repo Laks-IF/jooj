@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import "react-toastify/dist/ReactToastify.min.css";
+
 import colors from "./colors";
 
 const GlobalStyle = createGlobalStyle`
@@ -98,6 +100,46 @@ const GlobalStyle = createGlobalStyle`
     button{
         user-select: none;
         cursor: pointer;
+    }
+    
+    .toast-notification-error,
+    .toast-notification-info,
+    .toast-notification-success,
+    .toast-notification-warning {
+        display:flex;
+        .toast-notification-body {
+            padding: 10px 20px;
+            font-size: 14px;
+            &:before {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .toast-notification-error {
+            background-color: var(--error);
+            .toast-notification-body:before {
+            content: 'Ih rapaz, deu problema!';
+        }
+    }
+    .toast-notification-info {
+            background-color: var(--info);
+            .toast-notification-body:before {
+            content: 'Só pra ficar informado!';
+        }
+    }
+    .toast-notification-success {
+            background-color: var(--success);
+            .toast-notification-body:before {
+            content: 'Boa, feito!';
+        }
+    }
+    .toast-notification-warning {
+            background-color: var(--warning);
+            .toast-notification-body:before {
+            content: 'Cuidado!';
+        }
     }
 `;
 

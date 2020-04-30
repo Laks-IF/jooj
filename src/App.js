@@ -12,7 +12,12 @@ const App = () => (
   <Provider>
     <GlobalStyle />
     <Application />
-    <ToastContainer />
+    <ToastContainer
+      autoClose={8000}
+      closeButton={false}
+      pauseOnHover
+      position="bottom-right"
+    />
   </Provider>
 );
 

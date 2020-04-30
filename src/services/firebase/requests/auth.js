@@ -4,10 +4,6 @@ const auth = async (provider) => {
   try {
     const result = await firebase.auth().signInWithPopup(provider);
 
-    // TO USE GOOGLE API
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    // const token = result.credential.accessToken;
-
     const { user } = result;
 
     return user || null;
@@ -26,7 +22,26 @@ const auth = async (provider) => {
       email,
       credential,
     });
-    throw "Ocorreu um erro ao fazer login, tente novamente";
+
+    const errors = {
+      "auth/account-exists-with-different-credential": {
+        message: "Tente fazer login com outra rede social",
+        toast: "error",
+        render_error: true,
+      },
+      "auth/popup-closed-by-user": {
+        message: "Opa, você fechou a janela de login",
+        toast: "info",
+        render_error: false,
+      },
+    };
+    const default_error = {
+      message: "Ocorreu um erro ao fazer login, tente novamente",
+      toast: "error",
+      render_error: true,
+    };
+
+    throw errors[error.code] || default_error;
   }
 };
 
