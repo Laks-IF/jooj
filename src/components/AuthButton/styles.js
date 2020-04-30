@@ -31,6 +31,8 @@ export const AuthButton = styled.button`
   }
 `;
 export const AuthButtonText = styled.span`
+  font-weight: normal;
+  font-size: var(--font-normal);
   @media screen and (max-width: 379px) {
     display: none;
   }
@@ -41,12 +43,10 @@ export const AuthIconWrapper = styled.div`
 
   margin-right: 14px;
 
-  font-weight: bolder;
-
   display: flex;
   align-items: center;
 
-  font-size: 18px;
+  font-size: 15px;
 
   @media screen and (max-width: 379px) {
     margin-right: 0px;

@@ -63,8 +63,8 @@ const AuthPage = () => (
       Mostre sua carta... hã, digo, faça login para continuar...
     </S.AuthTitle>
     <S.AuthDescription>
-      Suas informações são utilizadas para e somente identificação, não podemos
-      divulgar nada em seu nome, é verdade esse bilhete.
+      Suas informações são utilizadas para e somente identificação, não vamos e
+      nem podemos divulgar nada em seu nome.
     </S.AuthDescription>
     <S.AuthButtonsWrapper>
       {Object.keys(methods).map((key) => (

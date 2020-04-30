@@ -17,6 +17,12 @@ const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
         width: 10px;
     }
+    ::-webkit-scrollbar-track {
+        border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+    }
 
     body{
         --transition: all .2s ease-in-out;
