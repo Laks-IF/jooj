@@ -4,8 +4,6 @@ export const AuthWrapper = styled.div`
   width: 100%;
   height: max(656px, 100vh);
 
-  background: var(--background);
-
   display: flex;
   flex-direction: column;
   justify-content: center;

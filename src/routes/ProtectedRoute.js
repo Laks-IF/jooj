@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useIsAuth, useHaveTeam } from "../hooks";
+
 // ============================================================
 // ROUTE ALLOWED ONLY FOR AUTHENTICATED USERS WITHOUT A TEAM
 // ============================================================
