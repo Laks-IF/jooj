@@ -25,13 +25,14 @@ const auth = async (provider) => {
 
     const errors = {
       "auth/account-exists-with-different-credential": {
-        message: "Tente fazer login com outra rede social",
+        message: "Tente fazer login com outra rede social que você utiliza",
         toast: "error",
         render_error: true,
       },
       "auth/popup-closed-by-user": {
-        message: "Opa, você fechou a janela de login",
-        toast: "info",
+        render_error: false,
+      },
+      "auth/cancelled-popup-request": {
         render_error: false,
       },
     };
