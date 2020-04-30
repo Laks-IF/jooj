@@ -1,6 +1,6 @@
 export const authDefault = {
   auth: {
-    isLogged: null,
+    isAuth: null,
     user: {},
   },
 };
@@ -14,7 +14,7 @@ const authReducer = (state = authDefault, action) => {
       return {
         auth: {
           ...state.auth,
-          isLogged: action.payload.data.isLogged,
+          isAuth: action.payload.data.isAuth,
           user: action.payload.data.user,
         },
       };

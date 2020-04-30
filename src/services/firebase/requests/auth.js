@@ -8,10 +8,7 @@ const auth = async (provider) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     // const token = result.credential.accessToken;
 
-    // The signed-in user info.
     const { user } = result;
-
-    console.log(user);
 
     return user || null;
   } catch (error) {

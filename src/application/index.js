@@ -5,30 +5,33 @@ import Routes from "../routes";
 import { setUserAction } from "../store/reducers/auth";
 import Connect from "../store/connect";
 
+import { useIsAuth } from "../hooks/index";
+
 import firebase_services from "../services/firebase";
 
-const Application = ({ auth, dispatch }) => {
-  useEffect(() => {
-    const user = firebase_services.getUser();
+const Application = ({ dispatch }) => {
+  const isAuth = useIsAuth();
 
-    dispatch(
-      setUserAction({
-        isLogged: !!user,
-        user: user || {},
-      })
-    );
+  useEffect(() => {
+    const getUser = async () => {
+      const user = await firebase_services.getUser();
+
+      console.log(!!user);
+      console.log(user);
+
+      dispatch(
+        setUserAction({
+          isAuth: !!user,
+          user: user || {},
+        })
+      );
+    };
+    getUser();
   }, []);
 
-  if (auth.isLogged === null) return <h1>Carregando usuário</h1>;
+  if (isAuth === null) return <h1>Carregando usuário</h1>;
 
   return <Routes />;
 };
 
-const mapStateToProps = ({ auth }, props) => {
-  return {
-    auth,
-    ...props,
-  };
-};
-
-export default Connect(mapStateToProps)(Application);
+export default Connect()(Application);

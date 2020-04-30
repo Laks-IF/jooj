@@ -1,18 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import Dashboard from "../pages/Dashboard";
-import Auth from "../pages/Auth";
-
-import PrivateRoute from "./PrivateRoute";
-import PublicRoute from "./PublicRoute";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import all_routes from "./paths";
 
 const Routes = () => (
   <Router>
     <Switch>
-      <PublicRoute path="/auth" exact component={Auth} />
-      <PrivateRoute path="/" exact component={Dashboard} />
-      <Route path="/about" exact component={() => <>About Component</>} />
+      {all_routes.map(({ RouteType, props }) => (
+        <RouteType
+          key={`ROUTE_PATH_${props.path.replace(/\//g, "")}`}
+          {...props}
+        />
+      ))}
     </Switch>
   </Router>
 );

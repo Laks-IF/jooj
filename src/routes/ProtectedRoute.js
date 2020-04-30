@@ -1,11 +1,10 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useIsAuth, useHaveTeam } from "../hooks";
-
-// ======================================================
-// ROUTE ALLOWED ONLY FOR AUTHENTICATED USERS WITH A TEAM
-// ======================================================
-const PrivateRoute = ({ component: Component, ...rest }) => {
+// ============================================================
+// ROUTE ALLOWED ONLY FOR AUTHENTICATED USERS WITHOUT A TEAM
+// ============================================================
+const ProtectedRoute = ({ component: Component, ...rest }) => {
   const isAuth = useIsAuth();
   const haveTeam = useHaveTeam();
 
@@ -13,12 +12,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        isAuth && haveTeam ? (
+        isAuth && !haveTeam ? (
           <Component {...props} />
         ) : (
           <Redirect
             to={{
-              pathname: "/create",
+              pathname: "/auth",
               state: { from: props.location },
             }}
           />
@@ -28,4 +27,4 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;
