@@ -1,12 +1,21 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useIsAuth } from "../hooks";
+import { useIsAuth, useHaveTeam } from "../hooks";
 
 // ==============================================
 // ROUTE ALLOWED ONLY FOR UNAUTHENTICATED USERS
 // ==============================================
 const PublicRoute = ({ component: Component, ...rest }) => {
   const isAuth = useIsAuth();
+  const haveTeam = useHaveTeam();
+
+  let routeToRedirect;
+
+  if (haveTeam) routeToRedirect = "/";
+  else routeToRedirect = "/create";
+
+  console.log(isAuth);
+  console.log(haveTeam);
   return (
     <Route
       {...rest}
@@ -16,7 +25,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/",
+              pathname: routeToRedirect,
               state: { from: props.location },
             }}
           />

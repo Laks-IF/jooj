@@ -14,8 +14,8 @@ const authReducer = (state = authDefault, action) => {
       return {
         auth: {
           ...state.auth,
-          isAuth: action.payload.data.isAuth,
-          user: action.payload.data.user,
+          isAuth: action.payload.data.isAuth || null,
+          user: action.payload.data.user || {},
         },
       };
 

@@ -15,12 +15,16 @@ import firebase_service from "../../services/firebase";
 // ========================================
 import * as S from "./styles";
 
-const AuthButton = ({ method: { provider, icon: Icon, color, name } }) => {
+const AuthButton = ({
+  method: { provider, icon: Icon, color, name },
+  ...rest
+}) => {
   return (
     <S.AuthButton
       color={color}
       onClick={() => firebase_service.auth(provider)}
       className="font-normal"
+      {...rest}
     >
       <S.AuthIconWrapper>
         <Icon />

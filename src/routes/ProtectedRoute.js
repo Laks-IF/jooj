@@ -9,6 +9,11 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   const isAuth = useIsAuth();
   const haveTeam = useHaveTeam();
 
+  let routeToRedirect;
+
+  if (isAuth && haveTeam) routeToRedirect = "/";
+  if (!isAuth && !haveTeam) routeToRedirect = "/auth";
+
   return (
     <Route
       {...rest}
@@ -18,7 +23,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/auth",
+              pathname: routeToRedirect,
               state: { from: props.location },
             }}
           />

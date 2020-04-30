@@ -1,32 +1,19 @@
-import { useEffect, useState } from "react";
 import useStore from "../store/hooks/useStore";
 
 const useHaveTeam = () => {
-  const [userHaveTeam, setUserHaveTeam] = useState(null);
-
   const {
-    store: {
-      auth: { user },
-    },
+    store: { auth },
   } = useStore();
 
-  useEffect(() => setUserHaveTeam(!!user.teamId), [user.teamId]);
-
-  return !!userHaveTeam;
+  return !!auth.user.teamId;
 };
 
 const useIsAuth = () => {
-  const [userIsAuth, setUserIsAuth] = useState(null);
-
   const {
-    store: {
-      auth: { user },
-    },
+    store: { auth },
   } = useStore();
 
-  useEffect(() => setUserIsAuth(!!user.isAuth), [user.isAuth]);
-
-  return !!userIsAuth;
+  return auth.isAuth;
 };
 
 export { useHaveTeam, useIsAuth };

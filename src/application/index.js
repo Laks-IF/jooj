@@ -7,16 +7,25 @@ import Connect from "../store/connect";
 
 import { useIsAuth } from "../hooks/index";
 
-import firebase_services from "../services/firebase";
+import firebase_service from "../services/firebase";
 
 const Application = ({ dispatch }) => {
   const isAuth = useIsAuth();
 
   useEffect(() => {
-    const getUser = async () => {
-      const user = await firebase_services.getUser();
+    const getUser = async (currentUser) => {
+      let user = currentUser || (await firebase_service.getUser());
 
-      console.log(!!user);
+      if (user) {
+        let { uid, displayName: name, photoURL, email } = user;
+        user = { uid, name, photoURL, email };
+
+        user = await firebase_service.getUserData(
+          firebase_service.available_resources.USER,
+          user,
+          user.uid
+        );
+      }
       console.log(user);
 
       dispatch(
@@ -26,6 +35,8 @@ const Application = ({ dispatch }) => {
         })
       );
     };
+
+    firebase_service.onAuthStateChange(getUser);
     getUser();
   }, []);
 

@@ -34,12 +34,12 @@ const getUser = async () => {
   return user;
 };
 
-const isAuth = () => {
-  return !!getUser();
+const onAuthStateChange = (callback) => {
+  firebase.auth().onAuthStateChanged(callback);
 };
 
 export default {
   auth,
   getUser,
-  isAuth,
+  onAuthStateChange,
 };

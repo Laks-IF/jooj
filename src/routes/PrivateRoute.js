@@ -9,6 +9,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const isAuth = useIsAuth();
   const haveTeam = useHaveTeam();
 
+  let routeToRedirect;
+
+  if (!haveTeam) routeToRedirect = "/create";
+  if (!isAuth) routeToRedirect = "/auth";
+
   return (
     <Route
       {...rest}
@@ -18,7 +23,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/create",
+              pathname: routeToRedirect,
               state: { from: props.location },
             }}
           />

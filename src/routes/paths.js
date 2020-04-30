@@ -35,7 +35,7 @@ const all_routes = [
   {
     props: {
       path: "/create",
-      component: Auth,
+      component: () => <h1>Create Page, pagina pra criar uma turma</h1>,
       exact: true,
     },
     RouteType: ProtectedRoute,
