@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 
 import Dashboard from "../pages/Dashboard";
 import Auth from "../pages/Auth";
+import Create from "../pages/Create";
 
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -35,7 +36,7 @@ const all_routes = [
   {
     props: {
       path: "/create",
-      component: () => <h1>Create Page, pagina pra criar uma turma</h1>,
+      component: Create,
       exact: true,
     },
     RouteType: ProtectedRoute,

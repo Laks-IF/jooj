@@ -26,8 +26,8 @@ const Application = ({ dispatch }) => {
           user.uid
         );
       }
-      console.log(user);
-
+      console.log("passou por 1");
+      console.log(!!isAuth);
       dispatch(
         setUserAction({
           isAuth: !!user,
@@ -37,7 +37,6 @@ const Application = ({ dispatch }) => {
     };
 
     firebase_service.onAuthStateChange(getUser);
-    getUser();
   }, []);
 
   if (isAuth === null) return <h1>Carregando usuário</h1>;

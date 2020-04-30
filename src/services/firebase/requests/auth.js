@@ -29,9 +29,9 @@ const auth = async (provider) => {
 };
 
 const getUser = async () => {
-  const user = await firebase.auth().currentUser;
+  const session = await firebase.auth();
 
-  return user;
+  return session.currentUser;
 };
 
 const onAuthStateChange = (callback) => {

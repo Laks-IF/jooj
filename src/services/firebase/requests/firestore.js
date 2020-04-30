@@ -28,9 +28,7 @@ const getUserData = async (resource, data, uid) => {
   await documentRef.set(userData, options);
 
   snapshot = await resourceRef.doc(uid).get();
-  console.log("a");
-  console.log(snapshot.exists);
-  console.log(snapshot.data());
+  console.log("AEOEOAKAOEKEAKO");
   return snapshot.data();
 };
 

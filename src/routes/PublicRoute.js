@@ -14,8 +14,6 @@ const PublicRoute = ({ component: Component, ...rest }) => {
   if (haveTeam) routeToRedirect = "/";
   else routeToRedirect = "/create";
 
-  console.log(isAuth);
-  console.log(haveTeam);
   return (
     <Route
       {...rest}

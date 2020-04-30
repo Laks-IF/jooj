@@ -14,13 +14,15 @@ const authReducer = (state = authDefault, action) => {
       return {
         auth: {
           ...state.auth,
-          isAuth: action.payload.data.isAuth || null,
+          isAuth: action.payload.data.isAuth,
           user: action.payload.data.user || {},
         },
       };
 
     default:
-      return state;
+      throw new Error(
+        "Caro developer do futuro, tem algo errado nas actions types, por que esta que você está codando ainda não existe"
+      );
   }
 };
 
