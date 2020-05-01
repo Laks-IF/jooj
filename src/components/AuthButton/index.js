@@ -1,6 +1,12 @@
 import React from "react";
 
 // ========================================
+// STORE IMPORTS
+// ========================================
+import { setLoaderAction } from "../../store/reducers/loader";
+import Connect from "../../store/connect";
+
+// ========================================
 // COMPONENTES IMPORTS
 // ========================================
 import CallToButton from "../CallToButton";
@@ -20,11 +26,20 @@ import toast from "../../utils/toast";
 // ========================================
 // import * as S from "./styles";
 
-const AuthButton = ({ method: { provider, icon, color, name }, ...rest }) => {
+const AuthButton = ({
+  method: { provider, icon, color, name },
+  loader,
+  dispatch,
+  ...rest
+}) => {
   const handleLogin = async () => {
     try {
+      dispatch(setLoaderAction({ isLoading: true }));
+
       await firebase_service.auth(provider);
     } catch (error) {
+      dispatch(setLoaderAction({ isLoading: false }));
+
       if (!error.render_error) return;
 
       toast[error.toast || "error"](error.message);
@@ -46,4 +61,9 @@ const AuthButton = ({ method: { provider, icon, color, name }, ...rest }) => {
   );
 };
 
-export default AuthButton;
+const mapStateToProps = ({ loader }, props) => ({
+  loader,
+  ...props,
+});
+
+export default Connect(mapStateToProps)(AuthButton);

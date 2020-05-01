@@ -10,6 +10,7 @@ import Logo from "../../assets/browser-logo-512.png";
 // ========================================
 import AuthButton from "../../components/AuthButton";
 import Particles from "../../components/ParticlesBackground";
+import Loader from "../../components/Loader";
 
 // ========================================
 // UTILS IMPORTS
@@ -25,6 +26,7 @@ import * as S from "./styles";
 const AuthPage = () => (
   <S.AuthWrapper>
     <Particles />
+    <Loader />
     <S.AuthLogo
       arial-label="Flip Logotipo, é esta imagem que representa o aplicativo"
       src={Logo}
