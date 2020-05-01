@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
     body{
         --transition: all .2s ease-in-out;
         --border-radius: 4px;
+
+        --primary: #546CE6;
+        --secondary: #7589E9;
         
         --font-small: max(12px, 0.75vw);
         --font-normal: max(18px, 1vw);
