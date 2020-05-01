@@ -52,7 +52,7 @@ const Ripple = ({ duration = 850, color = "#fff" }) => {
     <S.RippleContainer
       duration={duration}
       color={color}
-      onMouseDown={addRipple}
+      onPointerDown={addRipple}
     >
       {rippleArray.length > 0 &&
         rippleArray.map((ripple, index) => {

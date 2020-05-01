@@ -5,12 +5,40 @@ export const SelectWrapper = styled.div`
   height: max(656px, 100vh);
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 export const ButtonsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 `;
+export const Button = styled.button`
+  background: ${(props) => props.background};
+
+  color: ${(props) => props.color};
+
+  font-size: var(--font-normal);
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 1.5rem;
+
+  border-radius: 6px;
+  margin: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+export const SelectIconWrapper = styled.div`
+  font-size: var(--font-normal);
+  margin-right: 12px;
+  align-items: center;
+`;
+
+export const SelectButtonText = styled.p``;

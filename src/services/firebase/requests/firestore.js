@@ -27,7 +27,12 @@ const getUserData = async (resource, data, uid) => {
   // ===================================================
   // IF USER EXISTS, INITIAL IS {}  ELSE, INITIAL IS CURRENT TIME
   // ===================================================
-  const initialObject = snapshot.exists ? {} : getTimestamp();
+  const initialObject = snapshot && snapshot.exists ? {} : getTimestamp();
+
+  // ===================================================
+  // TO MAKE SURE SNAPSHOT IS OBJECT
+  // ===================================================
+  snapshot = snapshot || {};
 
   // ===================================================
   // MERGE CURRENT DATA IF EXISTS WITH UPDATED DATA

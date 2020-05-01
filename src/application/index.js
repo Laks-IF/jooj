@@ -9,6 +9,8 @@ import { useIsAuth } from "../hooks/index";
 
 import firebase_service from "../services/firebase";
 
+import InitialLoad from "../components/InitialLoad";
+
 const Application = ({ dispatch }) => {
   const isAuth = useIsAuth();
 
@@ -38,8 +40,7 @@ const Application = ({ dispatch }) => {
     firebase_service.onAuthStateChange(getUser);
   }, []);
 
-  if (isAuth === null)
-    return <h1 style={{ color: "var(--color)" }}>Carregando usuário</h1>;
+  if (isAuth === null) return <InitialLoad />;
 
   return <Routes />;
 };
