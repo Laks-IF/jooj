@@ -35,6 +35,12 @@ const auth = async (provider) => {
       "auth/cancelled-popup-request": {
         render_error: false,
       },
+      "auth/network-request-failed": {
+        message:
+          "Parece que deu algo errado na conexão, é só clicar no botão de novo que agora vai",
+        toast: "error",
+        render_error: true,
+      },
     };
     const default_error = {
       message: "Ocorreu um erro ao fazer login, tente novamente",

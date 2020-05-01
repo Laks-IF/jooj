@@ -9,12 +9,14 @@ import { FaKey as JoinIcon, FaLock as CreateIcon } from "react-icons/fa";
 // COMPONENTES IMPORTS
 // ========================================
 import CallToButton from "../../components/CallToButton";
+import Particles from "../../components/ParticlesBackground";
 
 import * as S from "./styles";
 
 const SelectPage = () => {
   return (
     <S.SelectWrapper>
+      <Particles />
       <S.ButtonsWrapper>
         <CallToButton
           config={{
