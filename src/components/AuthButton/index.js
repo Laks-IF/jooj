@@ -32,6 +32,8 @@ const AuthButton = ({ method: { provider, icon, color, name }, ...rest }) => {
   };
   return (
     <CallToButton
+      role="button"
+      aria-label={`Clique aqui para fazer login com ${name}`}
       config={{
         text: `Login com ${name}`,
         color: "#fff",

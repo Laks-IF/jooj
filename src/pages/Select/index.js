@@ -19,16 +19,18 @@ const SelectPage = () => {
       <Particles />
       <S.ButtonsWrapper>
         <CallToButton
+          aria-label="Opa! Clique aqui para criar uma nova equipe!"
           config={{
-            text: "Bora criar uma equipe!",
+            text: "Criar uma nova equipe!",
             color: "#fff",
             background: "#546CE6",
             icon: CreateIcon,
           }}
         />
         <CallToButton
+          aria-label="Opa! Clique aqui para entrar em uma equipe já existente!"
           config={{
-            text: "Quero entrar em uma equipe!",
+            text: "Entrar em uma equipe!",
             color: "#fff",
             background: "#7589E9",
             icon: JoinIcon,

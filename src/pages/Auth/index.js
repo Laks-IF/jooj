@@ -25,7 +25,11 @@ import * as S from "./styles";
 const AuthPage = () => (
   <S.AuthWrapper>
     <Particles />
-    <S.AuthLogo src={Logo} alt="Flip Logotipo, imagem do aplicativo" />
+    <S.AuthLogo
+      arial-label="Flip Logotipo, é esta imagem que representa o aplicativo"
+      src={Logo}
+      alt="Flip Logotipo, imagem do aplicativo"
+    />
     <S.AuthTitle>
       Mostre sua carta... hã, digo, faça login para continuar...
     </S.AuthTitle>

@@ -91,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: max(12px, 0.75vw);
     }
     *.font-normal{
-        font-size: max(18px, 1vw);
+        font-size: max(16px, 1vw);
     }
     *.font-big{
         font-size: max(25px, 2vw);
