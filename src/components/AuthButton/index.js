@@ -3,7 +3,7 @@ import React from "react";
 // ========================================
 // COMPONENTES IMPORTS
 // ========================================
-import Ripple from "../Ripple";
+import CallToButton from "../CallToButton";
 
 // ========================================
 // FIREBASE SERVICE
@@ -18,12 +18,9 @@ import toast from "../../utils/toast";
 // ========================================
 // ALL STYLES IMPORTED AS S OBJECT
 // ========================================
-import * as S from "./styles";
+// import * as S from "./styles";
 
-const AuthButton = ({
-  method: { provider, icon: Icon, color, name },
-  ...rest
-}) => {
+const AuthButton = ({ method: { provider, icon, color, name }, ...rest }) => {
   const handleLogin = async () => {
     try {
       await firebase_service.auth(provider);
@@ -34,18 +31,16 @@ const AuthButton = ({
     }
   };
   return (
-    <S.AuthButton
-      color={color}
+    <CallToButton
+      config={{
+        text: `Login com ${name}`,
+        color: "#fff",
+        background: color,
+        icon,
+      }}
       onClick={handleLogin}
-      className="font-normal"
       {...rest}
-    >
-      <S.AuthIconWrapper>
-        <Icon />
-      </S.AuthIconWrapper>
-      <S.AuthButtonText>Login com {name}</S.AuthButtonText>
-      <Ripple color="var(--ripple)" duration={1000} />
-    </S.AuthButton>
+    />
   );
 };
 

@@ -2,7 +2,8 @@ import { Route } from "react-router-dom";
 
 import Dashboard from "../pages/Dashboard";
 import Auth from "../pages/Auth";
-import Create from "../pages/Create";
+import Select from "../pages/Select";
+import Action from "../pages/Action";
 
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -35,8 +36,16 @@ const all_routes = [
   },
   {
     props: {
-      path: "/create",
-      component: Create,
+      path: "/select",
+      component: Select,
+      exact: true,
+    },
+    RouteType: ProtectedRoute,
+  },
+  {
+    props: {
+      path: "/select/:action",
+      component: Action,
       exact: true,
     },
     RouteType: ProtectedRoute,

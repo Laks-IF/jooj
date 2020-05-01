@@ -12,7 +12,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
   let routeToRedirect;
 
   if (haveTeam) routeToRedirect = "/";
-  else routeToRedirect = "/create";
+  else routeToRedirect = "/select";
 
   return (
     <Route

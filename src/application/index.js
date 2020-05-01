@@ -38,7 +38,8 @@ const Application = ({ dispatch }) => {
     firebase_service.onAuthStateChange(getUser);
   }, []);
 
-  if (isAuth === null) return <h1>Carregando usuário</h1>;
+  if (isAuth === null)
+    return <h1 style={{ color: "var(--color)" }}>Carregando usuário</h1>;
 
   return <Routes />;
 };

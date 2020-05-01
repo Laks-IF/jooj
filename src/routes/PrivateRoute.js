@@ -11,7 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
   let routeToRedirect;
 
-  if (!haveTeam) routeToRedirect = "/create";
+  if (!haveTeam) routeToRedirect = "/select";
   if (!isAuth) routeToRedirect = "/auth";
 
   return (
