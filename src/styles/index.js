@@ -32,11 +32,12 @@ const GlobalStyle = createGlobalStyle`
 
         --primary: #546CE6;
         --secondary: #7589E9;
-        
+
         --font-small: max(12px, 0.75vw);
         --font-normal: max(18px, 1vw);
         --font-big: max(25px, 2vw);
     }
+
     body.dark{
         background-color: #24292E;
         --background: #24292E;
@@ -47,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
         --color: rgb(157, 165, 180);
         --color-light: rgb(214, 216, 218);
         --color-dark: #395B7D;
-        
+
         --box-shadow: none;
 
         --error: ${colors.error_dark};
@@ -56,13 +57,13 @@ const GlobalStyle = createGlobalStyle`
         --success: ${colors.success_dark};
 
         ::-webkit-scrollbar-track {
-            background: #333842; 
+            background: #333842;
         }
         ::-webkit-scrollbar-thumb {
-            background: #4E5154; 
+            background: #4E5154;
         }
     }
-    
+
     body.light{
         background-color: #f1f1f1;
         --background: #f1f1f1;
@@ -74,7 +75,7 @@ const GlobalStyle = createGlobalStyle`
         --color: #333;
         --color-light: #555;
         --color-dark: #222;
-        
+
         --box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.05);
 
         --error: ${colors.error_light};
@@ -83,10 +84,10 @@ const GlobalStyle = createGlobalStyle`
         --success: ${colors.success_light};
 
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+            background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #999; 
+            background: #999;
         }
     }
 
@@ -104,7 +105,7 @@ const GlobalStyle = createGlobalStyle`
         user-select: none;
         cursor: pointer;
     }
-    
+
     .toast-notification-error,
     .toast-notification-info,
     .toast-notification-success,
@@ -123,7 +124,7 @@ const GlobalStyle = createGlobalStyle`
     .toast-notification-error {
             background-color: var(--error);
             .toast-notification-body:before {
-            content: 'Ih rapaz, deu problema!';
+            content: 'Ih rapaz, deu ruim!';
         }
     }
     .toast-notification-info {

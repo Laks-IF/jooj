@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import authReducer, { authDefault } from "./../reducers/auth";
 import loaderReducer, { loaderDefault } from "./../reducers/loader";
 
-const useCombinedReducers = () => {
+export default function useCombinedReducers() {
   const [authStore, auth] = useReducer(authReducer, authDefault);
   const [loaderStore, loader] = useReducer(loaderReducer, loaderDefault);
 
@@ -10,6 +10,4 @@ const useCombinedReducers = () => {
     store: { ...authStore, ...loaderStore },
     reducers: [auth, loader],
   };
-};
-
-export default useCombinedReducers;
+}

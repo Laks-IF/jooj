@@ -1,19 +1,19 @@
 import useStore from "../store/hooks/useStore";
 
-const useHaveTeam = () => {
+function useHaveTeam() {
   const {
     store: { auth },
   } = useStore();
 
   return !!auth.user.teamId;
-};
+}
 
-const useIsAuth = () => {
+function useIsAuth() {
   const {
     store: { auth },
   } = useStore();
 
   return auth.isAuth;
-};
+}
 
 export { useHaveTeam, useIsAuth };

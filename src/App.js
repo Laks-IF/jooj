@@ -4,21 +4,21 @@ import { ToastContainer } from "react-toastify";
 
 import Provider from "./store";
 
-import GlobalStyle from "./styles";
+import GlobalStyles from "./styles";
 
-import Application from "./application";
+import Container from "./container";
 
-const App = () => (
-  <Provider>
-    <GlobalStyle />
-    <Application />
-    <ToastContainer
-      autoClose={8000}
-      closeButton={false}
-      pauseOnHover
-      position="bottom-right"
-    />
-  </Provider>
-);
-
-export default App;
+export default function App() {
+  return (
+    <Provider>
+      <GlobalStyles />
+      <Container />
+      <ToastContainer
+        autoClose={8000}
+        closeButton={false}
+        pauseOnHover
+        position="bottom-right"
+      />
+    </Provider>
+  );
+}

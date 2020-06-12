@@ -1,6 +1,6 @@
-import firebase from "../../../firebase";
+import firebase from "../../../config/firebase";
 
-const auth = async (provider) => {
+async function login(provider) {
   try {
     const result = await firebase.auth().signInWithPopup(provider);
 
@@ -42,6 +42,7 @@ const auth = async (provider) => {
         render_error: true,
       },
     };
+
     const default_error = {
       message: "Ocorreu um erro ao fazer login, tente novamente",
       toast: "error",
@@ -50,20 +51,20 @@ const auth = async (provider) => {
 
     throw errors[error.code] || default_error;
   }
-};
+}
 
-const getUser = async () => {
-  const session = await firebase.auth();
+function getUser() {
+  const session = firebase.auth();
 
   return session.currentUser;
-};
+}
 
-const onAuthStateChange = (callback) => {
+function onStateChange(callback) {
   firebase.auth().onAuthStateChanged(callback);
-};
+}
 
 export default {
-  auth,
+  login,
   getUser,
-  onAuthStateChange,
+  onStateChange,
 };

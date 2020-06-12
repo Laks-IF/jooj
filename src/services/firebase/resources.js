@@ -1,7 +1,7 @@
-const available_resources = {
+const resources = {
   USER: "user",
   TASK: "task",
   TEAM: "team",
 };
 
-export { available_resources };
+export { resources };

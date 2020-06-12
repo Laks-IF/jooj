@@ -17,7 +17,7 @@ const defaultConfig = {
   color: "var(--color)",
 };
 
-const CallToButton = ({ config: userConfig = {}, ...rest }) => {
+export default function CallToButton({ config: userConfig = {}, ...rest }) {
   const { background, color, text, icon: Icon } = {
     ...defaultConfig,
     ...userConfig,
@@ -34,6 +34,4 @@ const CallToButton = ({ config: userConfig = {}, ...rest }) => {
       <Ripple color="var(--ripple)" duration={1000} />
     </S.CallToButton>
   );
-};
-
-export default CallToButton;
+}

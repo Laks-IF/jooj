@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Auth from "../pages/Auth";
 import Select from "../pages/Select";
-import Action from "../pages/Action";
+import Join from "../pages/Join";
 
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -44,8 +44,8 @@ const all_routes = [
   },
   {
     props: {
-      path: "/select/:action",
-      component: Action,
+      path: "/select/:join",
+      component: Join,
       exact: true,
     },
     RouteType: ProtectedRoute,

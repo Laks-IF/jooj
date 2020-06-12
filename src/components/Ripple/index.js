@@ -5,7 +5,7 @@ import * as S from "./styles";
 // =================================
 // HOOK MANAGE LOGIC
 // =================================
-const useDebouncedRippleCleanUp = (rippleCount, duration, cleanUpFunction) => {
+function useDebouncedRippleCleanUp(rippleCount, duration, cleanUpFunction) {
   useLayoutEffect(() => {
     let bounce = null;
     if (rippleCount > 0) {
@@ -19,19 +19,19 @@ const useDebouncedRippleCleanUp = (rippleCount, duration, cleanUpFunction) => {
 
     return () => clearTimeout(bounce);
   }, [rippleCount, duration, cleanUpFunction]);
-};
+}
 
 // =================================
 // RIPPLE COMPONENT
 // =================================
-const Ripple = ({ duration = 850, color = "#fff" }) => {
+export default function Ripple({ duration = 850, color = "#fff" }) {
   const [rippleArray, setRippleArray] = useState([]);
 
-  useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
-    setRippleArray([]);
-  });
+  useDebouncedRippleCleanUp(rippleArray.length, duration, () =>
+    setRippleArray([])
+  );
 
-  const addRipple = (event) => {
+  function addRipple(event) {
     const rippleContainer = event.currentTarget.getBoundingClientRect();
     const size =
       rippleContainer.width > rippleContainer.height
@@ -47,7 +47,8 @@ const Ripple = ({ duration = 850, color = "#fff" }) => {
     };
 
     setRippleArray((prevState) => [...prevState, newRipple]);
-  };
+  }
+
   return (
     <S.RippleContainer
       duration={duration}
@@ -70,6 +71,4 @@ const Ripple = ({ duration = 850, color = "#fff" }) => {
         })}
     </S.RippleContainer>
   );
-};
-
-export default Ripple;
+}

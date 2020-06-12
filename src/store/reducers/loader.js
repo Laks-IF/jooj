@@ -6,28 +6,26 @@ export const loaderDefault = {
 
 export const SET_LOADER = "SET_LOADER";
 
-const loaderReducer = (state = loaderDefault, action) => {
-  switch (action.type) {
-    case SET_LOADER:
-      return {
-        loader: {
-          ...state.loader,
-          isLoading: action.payload.data.isLoading,
-        },
-      };
-
-    default:
-      return state;
-  }
-};
-
-export const setLoaderAction = (data) => {
+export function setLoaderAction(data) {
   return {
     type: SET_LOADER,
     payload: {
       data,
     },
   };
-};
+}
 
-export default loaderReducer;
+export default function loaderReducer(state = loaderDefault, action) {
+  const types = {
+    [SET_LOADER]: () => ({
+      loader: {
+        ...state.loader,
+        isLoading: action.payload.data.isLoading,
+      },
+    }),
+  };
+
+  const getNewState = types[action.type] || (() => state);
+
+  return getNewState();
+}

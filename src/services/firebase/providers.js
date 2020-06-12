@@ -1,4 +1,4 @@
-import firebase from "../../firebase";
+import firebase from "../../config/firebase";
 
 const {
   GithubAuthProvider,
@@ -7,11 +7,11 @@ const {
   TwitterAuthProvider,
 } = firebase.auth;
 
-const available_auth_methods = {
+const authProviders = {
   GITHUB: new GithubAuthProvider(),
   GOOGLE: new GoogleAuthProvider(),
   MICROSOFT: new OAuthProvider("microsoft.com"),
   TWITTER: new TwitterAuthProvider(),
 };
 
-export { available_auth_methods };
+export { authProviders };

@@ -6,31 +6,31 @@ import { FaTwitter, FaGoogle, FaGithub, FaMicrosoft } from "react-icons/fa";
 // ========================================
 // FIREBASE SERVICE
 // ========================================
-import firebase_service from "../../services/firebase";
+import { authProviders } from "../../services/firebase";
 
 // ========================================
 // ALL AVAILABLE METHODS
 // ========================================
 const methods = {
   google: {
-    provider: firebase_service.available_auth_methods.GOOGLE,
+    provider: authProviders.GOOGLE,
     color: "#DD4B39",
-    icon: FaGoogle,
+    Icon: FaGoogle,
   },
   github: {
-    provider: firebase_service.available_auth_methods.GITHUB,
+    provider: authProviders.GITHUB,
     color: "#000000",
-    icon: FaGithub,
+    Icon: FaGithub,
   },
   twitter: {
-    provider: firebase_service.available_auth_methods.TWITTER,
+    provider: authProviders.TWITTER,
     color: "#1C9CEA",
-    icon: FaTwitter,
+    Icon: FaTwitter,
   },
   microsoft: {
-    provider: firebase_service.available_auth_methods.MICROSOFT,
+    provider: authProviders.MICROSOFT,
     color: "#8646F2",
-    icon: FaMicrosoft,
+    Icon: FaMicrosoft,
   },
 };
 

@@ -1,10 +1,13 @@
-import { available_auth_methods } from "./providers";
-import { available_resources } from "./resources";
+import { authProviders } from "./providers";
+import { resources } from "./resources";
 
-import requests from "./requests";
+import { auth, firestore } from "./requests";
 
-export default {
-  available_auth_methods,
-  available_resources,
-  ...requests,
+export { authProviders, resources };
+
+const services = {
+  auth,
+  firestore,
 };
+
+export default services;

@@ -5,7 +5,7 @@ import { useIsAuth, useHaveTeam } from "../hooks";
 // ============================================================
 // ROUTE ALLOWED ONLY FOR AUTHENTICATED USERS WITHOUT A TEAM
 // ============================================================
-const ProtectedRoute = ({ component: Component, ...rest }) => {
+export default function ProtectedRoute({ component: Component, ...rest }) {
   const isAuth = useIsAuth();
   const haveTeam = useHaveTeam();
 
@@ -31,6 +31,4 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
       }
     />
   );
-};
-
-export default ProtectedRoute;
+}

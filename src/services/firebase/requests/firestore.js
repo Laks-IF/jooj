@@ -1,4 +1,6 @@
-import { db } from "../../../firebase";
+import { db } from "../../../config/firebase";
+
+import { resources } from "../resources";
 
 const userDefaultData = {
   teamId: null,
@@ -6,15 +8,17 @@ const userDefaultData = {
   photoURL: "https://api.adorable.io/avatars/100/abott@adorable.png",
 };
 
-const getTimestamp = () => ({
-  createdAt: new Date(),
-});
+function getTimestamp() {
+  return {
+    createdAt: new Date(),
+  };
+}
 
-const getUserData = async (resource, data, uid) => {
+async function getUser(data, uid) {
   // ===================================================
   // GET FIREBASE REFERENCES
   // ===================================================
-  const resourceRef = db.collection(resource);
+  const resourceRef = db.collection(resources.USER);
 
   let documentRef = resourceRef.doc(uid);
 
@@ -25,7 +29,7 @@ const getUserData = async (resource, data, uid) => {
   snapshot = snapshot ? snapshot.data() : {};
 
   // ===================================================
-  // IF USER EXISTS, INITIAL IS {}  ELSE, INITIAL IS CURRENT TIME
+  // IF USER EXISTS, INITIAL IS {}  ELSE, INITIAL IS TIMSTAMP OBJECT
   // ===================================================
   const initialObject = snapshot && snapshot.exists ? {} : getTimestamp();
 
@@ -65,7 +69,7 @@ const getUserData = async (resource, data, uid) => {
   // RETURN DATA OF UPDATED SNAPSHOT
   // ===================================================
   return snapshot.data();
-};
+}
 
 // const getResourceWithId = async (id, data) => {
 //   const resourceRef = db.collection(resource);
@@ -78,5 +82,5 @@ const getUserData = async (resource, data, uid) => {
 // };
 
 export default {
-  getUserData,
+  getUser,
 };

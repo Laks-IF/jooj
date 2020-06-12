@@ -1,45 +1,15 @@
 import React from "react";
 
-// ========================================
-// LIBRARY IMPORTS
-// ========================================
 import { useHistory } from "react-router-dom";
-import {
-  FaKey as JoinIcon,
-  FaLock as CreateIcon,
-  // FaQuestionCircle as HelpIcon,
-} from "react-icons/fa";
 
-// ========================================
-// COMPONENTES IMPORTS
-// ========================================
 import Ripple from "../../components/Ripple";
 import Particles from "../../components/ParticlesBackground";
 
+import buttons from "./buttons";
+
 import * as S from "./styles";
 
-const buttons = [
-  {
-    redirectTo: "/select/create",
-    icon: CreateIcon,
-    text: "Criar uma nova equipe!",
-    props: {
-      "aria-label": "Opa! Clique aqui para criar uma nova equipe!",
-      background: "var(--primary)",
-    },
-  },
-  {
-    redirectTo: "/select/join",
-    icon: JoinIcon,
-    text: "Entrar em uma equipe!",
-    props: {
-      "aria-label": "Opa! Clique aqui para entrar em uma equipe já existente!",
-      background: "var(--secondary)",
-    },
-  },
-];
-
-const SelectPage = () => {
+export default function Select() {
   const history = useHistory();
 
   return (
@@ -48,6 +18,7 @@ const SelectPage = () => {
       <S.ButtonsWrapper>
         {buttons.map(({ props, text, icon: Icon, redirectTo }) => (
           <S.Button
+            key={`id-${redirectTo}`}
             onClick={() => history.push(redirectTo)}
             color="#fff"
             role="button"
@@ -63,6 +34,4 @@ const SelectPage = () => {
       </S.ButtonsWrapper>
     </S.SelectWrapper>
   );
-};
-
-export default SelectPage;
+}

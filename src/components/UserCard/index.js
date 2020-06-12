@@ -1,7 +1,5 @@
 import React from "react";
 
-const UserCard = () => {
+export default function UserCard() {
   return <div></div>;
-};
-
-export default UserCard;
+}
