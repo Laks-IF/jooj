@@ -5,7 +5,7 @@ import { useIsAuth, useHaveTeam } from "../hooks";
 // ======================================================
 // ROUTE ALLOWED ONLY FOR AUTHENTICATED USERS WITH A TEAM
 // ======================================================
-const PrivateRoute = ({ component: Component, ...rest }) => {
+export default function PrivateRoute({ component: Component, ...rest }) {
   const isAuth = useIsAuth();
   const haveTeam = useHaveTeam();
 
@@ -31,6 +31,4 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       }
     />
   );
-};
-
-export default PrivateRoute;
+}

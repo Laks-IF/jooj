@@ -6,7 +6,7 @@ import { FaTwitter, FaGoogle, FaGithub, FaMicrosoft } from "react-icons/fa";
 // ========================================
 // FIREBASE SERVICE
 // ========================================
-import { authProviders } from "../../services/firebase";
+import { authProviders } from "../../../services/firebase";
 
 // ========================================
 // ALL AVAILABLE METHODS

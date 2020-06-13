@@ -1,9 +1,9 @@
 import { Route } from "react-router-dom";
 
-import Dashboard from "../pages/Dashboard";
-import Auth from "../pages/Auth";
-import Select from "../pages/Select";
-import Join from "../pages/Join";
+import Dashboard from "../pages/private/Dashboard";
+import Auth from "../pages/public/Auth";
+import Select from "../pages/protected/Select";
+import EnterTeam from "../pages/protected/EnterTeam";
 
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -44,8 +44,8 @@ const all_routes = [
   },
   {
     props: {
-      path: "/select/:join",
-      component: Join,
+      path: "/select/:action",
+      component: EnterTeam,
       exact: true,
     },
     RouteType: ProtectedRoute,

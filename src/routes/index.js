@@ -5,7 +5,7 @@ import all_routes from "./paths";
 
 export default function Rotues() {
   return (
-    <Router>
+    <Router basename="/flip">
       <Switch>
         {all_routes.map(({ RouteType, props }) => (
           <RouteType

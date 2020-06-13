@@ -14,6 +14,7 @@ export const ButtonsWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
 `;
+
 export const Button = styled.button`
   background: ${(props) => props.background};
 
@@ -24,7 +25,7 @@ export const Button = styled.button`
   position: relative;
   overflow: hidden;
 
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
 
   border-radius: 6px;
   margin: 6px;
@@ -33,6 +34,12 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(80%);
+  }
 `;
 
 export const SelectIconWrapper = styled.div`

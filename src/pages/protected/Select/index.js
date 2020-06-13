@@ -2,8 +2,8 @@ import React from "react";
 
 import { useHistory } from "react-router-dom";
 
-import Ripple from "../../components/Ripple";
-import Particles from "../../components/ParticlesBackground";
+import Ripple from "../../../components/Ripple";
+import Particles from "../../../components/ParticlesBackground";
 
 import buttons from "./buttons";
 

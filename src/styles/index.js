@@ -26,7 +26,12 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 6px;
     }
 
-    body{
+    html, body, #root {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
         --transition: all .2s ease-in-out;
         --border-radius: 4px;
 
@@ -38,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
         --font-big: max(25px, 2vw);
     }
 
-    body.dark{
+    body.dark {
         background-color: #24292E;
         --background: #24292E;
         --background-light: #333842;
@@ -64,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    body.light{
+    body.light {
         background-color: #f1f1f1;
         --background: #f1f1f1;
         --background-light: #FFFFFF;
@@ -91,17 +96,17 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    *.font-small{
+    *.font-small {
         font-size: max(12px, 0.75vw);
     }
-    *.font-normal{
+    *.font-normal {
         font-size: max(16px, 1vw);
     }
-    *.font-big{
+    *.font-big {
         font-size: max(25px, 2vw);
     }
 
-    button{
+    button {
         user-select: none;
         cursor: pointer;
     }

@@ -63,8 +63,15 @@ function onStateChange(callback) {
   firebase.auth().onAuthStateChanged(callback);
 }
 
+async function logout() {
+  await firebase.auth().signOut();
+}
+
+window.teste = logout;
+
 export default {
   login,
   getUser,
   onStateChange,
+  logout,
 };

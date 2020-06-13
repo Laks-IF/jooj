@@ -3,36 +3,36 @@ import React from "react";
 // ====================
 // ASSETS IMPORTS
 // ====================
-import Logo from "../../assets/browser-logo-512.png";
+import Logo from "../../../assets/browser-logo-512.png";
 
 // ========================================
 // COMPONENTES IMPORTS
 // ========================================
-import Particles from "../../components/ParticlesBackground";
-import Loader from "../../components/Loader";
+import Particles from "../../../components/ParticlesBackground";
+import Loader from "../../../components/Loader";
 
 // ========================================
 // STORE IMPORTS
 // ========================================
-import { setLoaderAction } from "../../store/reducers/loader";
-import Connect from "../../store/connect";
+import { setLoaderAction } from "../../../store/reducers/loader";
+import Connect from "../../../store/connect";
 
 // ========================================
 // COMPONENTES IMPORTS
 // ========================================
-import CallToButton from "../CallToButton";
+import CallToButton from "../../../components/CallToButton";
 
 // ========================================
 // FIREBASE SERVICE
 // ========================================
-import firebase_service from "../../services/firebase";
+import firebase_service from "../../../services/firebase";
 
 // ========================================
 // UTILS IMPORTS
 // ========================================
-import toast from "../../utils/toast";
+import toast from "../../../utils/toast";
 
-import { firstLetterUpperCase } from "../../utils";
+import { firstLetterUpperCase } from "../../../utils";
 
 import methods from "./methods";
 
