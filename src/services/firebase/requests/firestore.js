@@ -89,8 +89,8 @@ async function createTeam({ name, password }, userId) {
   const data = {
     name,
     password: bcrypt_services.hashPassword(password),
-    createdAt: getTimestamp(),
     invite: getTeamInvite(),
+    ...getTimestamp(),
   };
 
   const teamRef = await teamResourceRef.add(data);
@@ -110,8 +110,52 @@ async function updateUser(newData, userId) {
   await userDocRef.set(newData, options);
 }
 
+async function getTeamByInvite(invite) {
+  try {
+    const teamResourceRef = db.collection(resources.TEAM);
+
+    let teamData = null;
+
+    const teamSnapshot = await teamResourceRef
+      .where("invite", "==", invite)
+      .get();
+
+    teamSnapshot.forEach((doc) => (teamData = { ...doc.data(), id: doc.id }));
+
+    if (!teamData) throw new Error("Invalid invite");
+
+    return teamData;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function getLeaderByTeam(teamId) {
+  try {
+    const userResourceRef = db.collection(resources.USER);
+
+    let leaderData = null;
+
+    const leaderSnapshot = await userResourceRef
+      .where("teamId", "==", teamId)
+      .get();
+
+    leaderSnapshot.forEach(
+      (doc) => (leaderData = { ...doc.data(), id: doc.id })
+    );
+
+    if (!leaderData) throw new Error("Invalid invite");
+
+    return leaderData;
+  } catch (error) {
+    return null;
+  }
+}
+
 export default {
   getUser,
   createTeam,
   updateUser,
+  getTeamByInvite,
+  getLeaderByTeam,
 };

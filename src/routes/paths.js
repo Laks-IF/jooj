@@ -4,6 +4,7 @@ import Dashboard from "../pages/private/Dashboard";
 import Auth from "../pages/public/Auth";
 import Select from "../pages/protected/Select";
 import EnterTeam from "../pages/protected/EnterTeam";
+import Invite from "../pages/protected/EnterTeam/Invite";
 
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -46,6 +47,14 @@ const all_routes = [
     props: {
       path: "/select/:action",
       component: EnterTeam,
+      exact: true,
+    },
+    RouteType: ProtectedRoute,
+  },
+  {
+    props: {
+      path: "/invite/:invite",
+      component: Invite,
       exact: true,
     },
     RouteType: ProtectedRoute,

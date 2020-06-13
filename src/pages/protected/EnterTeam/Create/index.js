@@ -123,8 +123,8 @@ function Create({
             value={name}
             config={{
               valid: validName,
-              invalidLabel: "Escolhe um nome maior, mais descritivo!",
-              label: "Nome da turma:",
+              invalidLabel: "Escolha um nome maior!",
+              label: "Nome da turma",
               Icon: MdGroupAdd,
               type: "text",
               enableShowHide: false,
@@ -133,7 +133,7 @@ function Create({
         </S.CreateInputField>
         <S.CreateInputField>
           <EnterTeamInput
-            placeholder="Crie a senha da turma:"
+            placeholder="Crie a senha da turma"
             onChange={handleChangePassword}
             value={password}
             config={{
