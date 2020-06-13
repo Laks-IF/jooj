@@ -44,6 +44,8 @@ function Auth({ dispatch }) {
       dispatch(setLoaderAction({ isLoading: true }));
 
       await firebase_service.auth.login(provider);
+
+      dispatch(setLoaderAction({ isLoading: false }));
     } catch (error) {
       dispatch(setLoaderAction({ isLoading: false }));
 

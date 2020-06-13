@@ -16,7 +16,7 @@ function Container({ dispatch }) {
 
   useEffect(() => {
     async function getUser(currentUser) {
-      let user = currentUser || (await firebase_service.auth.getUser());
+      let user = currentUser || firebase_service.auth.getUser();
 
       if (user) {
         let { uid, displayName: name, photoURL, email } = user;

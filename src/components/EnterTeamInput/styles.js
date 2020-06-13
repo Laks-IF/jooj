@@ -8,6 +8,22 @@ export const EnterTeamInputWrapper = styled.div`
 export const EnterTeamLabel = styled.div`
   margin-bottom: 1rem;
   color: var(--color-light);
+
+  &::after {
+    transition: all 0.2s ease-in-out;
+    content: " - " attr(data-label);
+    color: var(--error);
+    font-weight: bold;
+    font-style: italic;
+    opacity: 0;
+    font-size: var(--font-small);
+  }
+
+  &.input--invalid {
+    &::after {
+      opacity: 1;
+    }
+  }
 `;
 
 export const EnterTeamInputContainer = styled.div`
@@ -30,6 +46,9 @@ export const EnterTeamInputContainer = styled.div`
 
   &.focused {
     border: 2px solid var(--primary);
+  }
+  &.input--invalid {
+    border: 2px solid var(--error);
   }
 `;
 

@@ -5,7 +5,15 @@ import { FaEyeSlash as Hidden, FaEye as Visible } from "react-icons/fa";
 import * as S from "./styles";
 
 function EnterTeamInput({
-  config: { label, Icon, type: initialType, enableShowHide, autoFocus },
+  config: {
+    valid,
+    invalidLabel,
+    label,
+    Icon,
+    type: initialType,
+    enableShowHide,
+    autoFocus,
+  },
   ...props
 }) {
   const [type, setType] = useState(enableShowHide ? "password" : initialType);
@@ -25,10 +33,19 @@ function EnterTeamInput({
     setFocused(true);
   }
 
+  const inputContainerClassName = `${focused && "focused"} ${
+    !valid && "input--invalid"
+  }`;
+
   return (
-    <S.EnterTeamInputWrapper {...props}>
-      <S.EnterTeamLabel>{label}</S.EnterTeamLabel>
-      <S.EnterTeamInputContainer className={focused && "focused"}>
+    <S.EnterTeamInputWrapper>
+      <S.EnterTeamLabel
+        className={!valid && "input--invalid"}
+        data-label={invalidLabel}
+      >
+        {label}
+      </S.EnterTeamLabel>
+      <S.EnterTeamInputContainer className={inputContainerClassName}>
         <S.EnterTeamInput
           {...props}
           type={type}

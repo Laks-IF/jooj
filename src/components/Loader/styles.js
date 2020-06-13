@@ -10,6 +10,8 @@ export const LoaderWrapper = styled.div`
 
   background: var(--primary);
 
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+
   &.loader__loading {
     animation: loader 1s ease-in-out 0s infinite;
   }

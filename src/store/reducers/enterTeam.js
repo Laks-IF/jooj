@@ -4,15 +4,9 @@ export const enterTeamDefault = {
       create: {
         name: "",
         password: "",
-        createdAt: null,
       },
       join: {
-        code: "",
-        password: "",
-      },
-      directJoin: {
-        code: "",
-        password: "",
+        invite: "",
       },
     },
   },
@@ -20,7 +14,7 @@ export const enterTeamDefault = {
 
 export const SET_FORM = "SET_FORM";
 
-export function setFormction(data) {
+export function setFormAction(data) {
   return {
     type: SET_FORM,
     payload: {

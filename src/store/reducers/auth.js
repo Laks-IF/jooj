@@ -1,13 +1,22 @@
 export const authDefault = {
   auth: {
     isAuth: null,
-    user: {},
+    user: {
+      createdAt: null,
+      email: null,
+      isLeader: null,
+      name: null,
+      photoURL: null,
+      teamId: null,
+      uid: null,
+    },
   },
 };
 
 export const SET_USER = "SET_USER";
 
 export function setUserAction(data) {
+  console.log(data);
   return {
     type: SET_USER,
     payload: {

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const CreateWrapper = styled.section`
+export const JoinWrapper = styled.section`
   flex: 1;
 
   display: flex;
   justify-content: center;
 `;
 
-export const CreateContainer = styled.form`
+export const JoinContainer = styled.form`
   width: 100%;
   height: 100%;
 
@@ -20,7 +20,7 @@ export const CreateContainer = styled.form`
   padding: 1rem;
 `;
 
-export const CreateInputField = styled.div`
+export const JoinInputField = styled.div`
   width: 100%;
 
   display: flex;
@@ -29,13 +29,13 @@ export const CreateInputField = styled.div`
   margin-bottom: 3rem;
 `;
 
-export const CreateImage = styled.img`
+export const JoinImage = styled.img`
   width: 50px;
   margin: 2rem 0;
   margin-bottom: 0.8rem;
 `;
 
-export const CreateTitle = styled.h1`
+export const JoinTitle = styled.h1`
   font-size: var(--font-big);
   color: var(--color-light);
 
@@ -45,7 +45,7 @@ export const CreateTitle = styled.h1`
   text-align: center;
 `;
 
-export const CreateSubmitButton = styled.div`
+export const JoinSubmitButton = styled.div`
   width: 100%;
   max-width: 350px;
 

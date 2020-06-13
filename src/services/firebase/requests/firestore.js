@@ -1,6 +1,24 @@
 import { db } from "../../../config/firebase";
 
+import bcrypt_services from "../../bcrypt";
+
 import { resources } from "../resources";
+
+function getTimestamp() {
+  return {
+    createdAt: new Date(),
+  };
+}
+
+function getTeamInvite() {
+  let dt = new Date().getTime();
+  const uuid = "xyxxyyxx".replace(/[xy]/g, function (c) {
+    let r = (dt + Math.random() * 16) % 16 | 0;
+    dt = Math.floor(dt / 16);
+    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
+  return uuid;
+}
 
 const userDefaultData = {
   teamId: null,
@@ -8,11 +26,12 @@ const userDefaultData = {
   photoURL: "https://api.adorable.io/avatars/100/abott@adorable.png",
 };
 
-function getTimestamp() {
-  return {
-    createdAt: new Date(),
-  };
-}
+// ===================================================
+// FIREBASE .SET() METHOD OPTIONS TO ALLOW MERGE
+// ===================================================
+const options = {
+  merge: true,
+};
 
 async function getUser(data, uid) {
   // ===================================================
@@ -49,13 +68,6 @@ async function getUser(data, uid) {
   };
 
   // ===================================================
-  // FIREBASE .SET() METHOD OPTIONS TO ALLOW MERGE
-  // ===================================================
-  const options = {
-    merge: true,
-  };
-
-  // ===================================================
   // ALWAYS USER OPEN APP, UPDATE YOUR DATA IN FIRESTORE
   // ===================================================
   await documentRef.set(userData, options);
@@ -71,16 +83,35 @@ async function getUser(data, uid) {
   return snapshot.data();
 }
 
-// const getResourceWithId = async (id, data) => {
-//   const resourceRef = db.collection(resource);
+async function createTeam({ name, password }, userId) {
+  const teamResourceRef = db.collection(resources.TEAM);
 
-//   const query = resourceRef.doc(uid);
+  const data = {
+    name,
+    password: bcrypt_services.hashPassword(password),
+    createdAt: getTimestamp(),
+    invite: getTeamInvite(),
+  };
 
-//   const snapshot = await query.get();
+  const teamRef = await teamResourceRef.add(data);
 
-//   return snapshot;
-// };
+  const newUserData = { teamId: teamRef.id, isLeader: true };
+
+  await updateUser(newUserData, userId);
+
+  return newUserData;
+}
+
+async function updateUser(newData, userId) {
+  const userResourceRef = db.collection(resources.USER);
+
+  const userDocRef = userResourceRef.doc(userId);
+
+  await userDocRef.set(newData, options);
+}
 
 export default {
   getUser,
+  createTeam,
+  updateUser,
 };
