@@ -9,8 +9,8 @@ export const TopBarWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: var(--secondary);
-  color: var(--color-light);
+  background: var(--primary);
+  color: #f1f1f1;
 
   cursor: pointer;
 `;

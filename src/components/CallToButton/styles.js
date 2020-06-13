@@ -5,6 +5,7 @@ export const CallToButton = styled.button`
 
   display: flex;
   align-items: center;
+  justify-content: ${(props) => (props.center ? "center" : "flex-start")};
 
   padding: 1rem 2rem;
   margin: 4px;
@@ -32,7 +33,6 @@ export const CallToButton = styled.button`
   @media screen and (max-width: 379px) {
     padding: 14px;
     min-width: 50px;
-    justify-content: center;
   }
 `;
 export const CallToButtonText = styled.span`

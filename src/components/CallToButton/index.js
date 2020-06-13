@@ -15,16 +15,22 @@ const defaultConfig = {
   text: "Click Me",
   background: "var(--background-light)",
   color: "var(--color)",
+  center: false,
 };
 
 export default function CallToButton({ config: userConfig = {}, ...rest }) {
-  const { background, color, text, icon: Icon } = {
+  const { background, color, text, icon: Icon, center } = {
     ...defaultConfig,
     ...userConfig,
   };
 
   return (
-    <S.CallToButton background={background} color={color} {...rest}>
+    <S.CallToButton
+      center={!!center}
+      background={background}
+      color={color}
+      {...rest}
+    >
       {Icon && (
         <S.CallToIconWrapper>
           <Icon />

@@ -7,5 +7,5 @@ export const EnterTeamWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: green;
+  background: var(--background);
 `;
