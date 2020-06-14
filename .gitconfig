@@ -1,0 +1,6 @@
+[alias]
+  ps = push origin master
+  c = commit -m
+  s = status
+  p = pull
+  a = add .
