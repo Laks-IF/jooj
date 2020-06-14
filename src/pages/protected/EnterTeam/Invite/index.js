@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import { useHistory, useParams } from "react-router";
 
+import { FaArrowLeft as BackArrow } from "react-icons/fa";
+
+import InvalidInvite from "../../../../assets/invalid-invite.png";
+import Logo from "../../../../assets/browser-favicon-64.png";
+
 import firebase_services from "../../../../services/firebase";
 
 import Particles from "../../../../components/ParticlesBackground";
@@ -21,49 +26,90 @@ export default function Invite() {
 
   useEffect(() => {
     async function getInviteData() {
-      const teamData = await firebase_services.firestore.getTeamByInvite(
-        invite
-      );
-      const leaderData = await firebase_services.firestore.getLeaderByTeam(
-        teamData.id
-      );
+      try {
+        const teamData = await firebase_services.firestore.getTeamByInvite(
+          invite
+        );
 
-      console.log({ teamData, leaderData });
-      if (!teamData || !leaderData) {
-        return console.log("Convite inválido");
+        const leaderData = await firebase_services.firestore.getLeaderByTeam(
+          teamData.id
+        );
+
+        if (!teamData || !leaderData) {
+          throw new Error("Invalid invite");
+        }
+
+        setInviteData({
+          team: teamData,
+          leader: leaderData,
+        });
+        setLoading(false);
+      } catch (e) {
+        setLoading(false);
       }
-
-      setInviteData({
-        team: teamData,
-        leader: leaderData,
-      });
-      setLoading(false);
     }
 
     getInviteData();
-  }, []);
+  }, [invite]);
 
   return (
     <S.InviteWrapper>
       <Particles />
       <S.InviteContainer>
-        <S.InviteHeader></S.InviteHeader>
+        <S.InviteHeader onClick={handleComeBack}>
+          <BackArrow />
+        </S.InviteHeader>
         {loading ? (
-          <h1>Carregando</h1>
-        ) : (
+          <S.InviteLoadingWrapper>
+            <S.InviteLoadingImg src={Logo} alt="Logo do aplicativo" />
+          </S.InviteLoadingWrapper>
+        ) : !!inviteData ? (
           (function () {
             const {
               team: { name: teamName, createdAt },
               leader: { name: leaderName, photoURL },
             } = inviteData;
-            const dateString = createdAt.toDate().toLocaleDateString();
+
+            const dateString = createdAt.toDate().getFullYear();
+
             return (
               <S.InviteBody>
-                <S.InviteTitle>
-                  {teamName}, líder: {leaderName}
-                </S.InviteTitle>
-                <S.InviteLeader>{dateString}</S.InviteLeader>
-                <S.InviteButton>É essa mesmo!</S.InviteButton>
+                <S.InviteLeaderPhotoWrapper>
+                  <S.InviteLeaderImg
+                    src={photoURL}
+                    alt={`Foto de perfil do líder do ${teamName}`}
+                  />
+                </S.InviteLeaderPhotoWrapper>
+                <S.InviteLeader>
+                  {leaderName} convidou você para se juntar
+                </S.InviteLeader>
+                <S.InviteTitle>{teamName}</S.InviteTitle>
+                <S.InviteTeamDateWrapper>
+                  <S.InviteTeamDate circleColor="var(--success)">
+                    Turma de {dateString}
+                  </S.InviteTeamDate>
+                </S.InviteTeamDateWrapper>
+                <S.InviteButton>Aceitar</S.InviteButton>
+              </S.InviteBody>
+            );
+          })()
+        ) : (
+          (function () {
+            return (
+              <S.InviteBody>
+                <S.InviteLeaderPhotoWrapper>
+                  <S.InviteLeaderImg
+                    src={InvalidInvite}
+                    alt="Convite inválido"
+                  />
+                </S.InviteLeaderPhotoWrapper>
+                <S.InviteLeader>Ops, este convite é inválido</S.InviteLeader>
+                <S.InviteTitle>Convite Inválido</S.InviteTitle>
+                <S.InviteTeamDateWrapper>
+                  <S.InviteTeamDate circleColor="var(--error)">
+                    Solicite um novo convite
+                  </S.InviteTeamDate>
+                </S.InviteTeamDateWrapper>
               </S.InviteBody>
             );
           })()

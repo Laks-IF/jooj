@@ -138,6 +138,7 @@ async function getLeaderByTeam(teamId) {
 
     const leaderSnapshot = await userResourceRef
       .where("teamId", "==", teamId)
+      .where("isLeader", "==", true)
       .get();
 
     leaderSnapshot.forEach(
