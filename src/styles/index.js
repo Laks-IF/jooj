@@ -53,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
         --color: rgb(157, 165, 180);
         --color-light: rgb(214, 216, 218);
         --color-dark: #395B7D;
+        --color-abs: #fff;
 
         --box-shadow: none;
 
@@ -80,6 +81,7 @@ const GlobalStyle = createGlobalStyle`
         --color: #333;
         --color-light: #555;
         --color-dark: #222;
+        --color-abs: #000;
 
         --box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.05);
 

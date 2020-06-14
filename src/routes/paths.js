@@ -10,7 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import ProtectedRoute from "./ProtectedRoute";
 
-const all_routes = [
+const paths = [
   {
     props: {
       path: "/auth",
@@ -18,6 +18,7 @@ const all_routes = [
       exact: true,
     },
     RouteType: PublicRoute,
+    type: "public",
   },
   {
     props: {
@@ -26,6 +27,7 @@ const all_routes = [
       exact: true,
     },
     RouteType: PrivateRoute,
+    type: "private",
   },
   {
     props: {
@@ -34,6 +36,7 @@ const all_routes = [
       exact: true,
     },
     RouteType: Route,
+    type: "any",
   },
   {
     props: {
@@ -42,6 +45,7 @@ const all_routes = [
       exact: true,
     },
     RouteType: ProtectedRoute,
+    type: "protected",
   },
   {
     props: {
@@ -50,6 +54,7 @@ const all_routes = [
       exact: true,
     },
     RouteType: ProtectedRoute,
+    type: "protected",
   },
   {
     props: {
@@ -58,7 +63,8 @@ const all_routes = [
       exact: true,
     },
     RouteType: ProtectedRoute,
+    type: "protected",
   },
 ];
 
-export default all_routes;
+export default paths;
