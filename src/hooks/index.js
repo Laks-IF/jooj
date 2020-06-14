@@ -16,4 +16,12 @@ function useIsAuth() {
   return auth.isAuth;
 }
 
-export { useHaveTeam, useIsAuth };
+function useUserData() {
+  const {
+    store: { auth },
+  } = useStore();
+
+  return auth.user;
+}
+
+export { useHaveTeam, useIsAuth, useUserData };

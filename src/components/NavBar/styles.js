@@ -13,6 +13,8 @@ export const NavBarWrapper = styled.div`
   left: 0;
 
   box-shadow: 0 -2px 5px rgb(0, 0, 0, 0.05);
+
+  background: var(--background);
 `;
 
 export const NavBarContainer = styled.div`
@@ -34,8 +36,6 @@ export const NavTabWrapper = styled(NavLink)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  background: var(--background);
 
   cursor: pointer;
 

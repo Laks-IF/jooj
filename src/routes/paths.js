@@ -1,7 +1,10 @@
 import { Route } from "react-router-dom";
 
 import Dashboard from "../pages/private/Dashboard";
+import Team from "../pages/private/Team";
+
 import Auth from "../pages/public/Auth";
+
 import Select from "../pages/protected/Select";
 import EnterTeam from "../pages/protected/EnterTeam";
 import Invite from "../pages/protected/EnterTeam/Invite";
@@ -24,6 +27,15 @@ const paths = [
     props: {
       path: "/",
       component: Dashboard,
+      exact: true,
+    },
+    RouteType: PrivateRoute,
+    type: "private",
+  },
+  {
+    props: {
+      path: "/team",
+      component: Team,
       exact: true,
     },
     RouteType: PrivateRoute,

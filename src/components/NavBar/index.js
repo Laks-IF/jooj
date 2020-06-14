@@ -13,7 +13,12 @@ export default function NavBar() {
     <S.NavBarWrapper>
       <S.NavBarContainer>
         {tabs.map(({ Icon, label, path }) => (
-          <S.NavTabWrapper key={path} to={path} activeClassName="tab--active">
+          <S.NavTabWrapper
+            key={path}
+            to={path}
+            activeClassName="tab--active"
+            exact={true}
+          >
             <S.NavTabIconWrapper className="nav-tab__icon-wrapper">
               <Icon />
             </S.NavTabIconWrapper>

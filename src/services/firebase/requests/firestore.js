@@ -153,10 +153,68 @@ async function getLeaderByTeam(teamId) {
   }
 }
 
+function getUsersByTeam(teamId, { limit }) {
+  try {
+    let start = null;
+
+    let hasMore = null;
+
+    async function initialQuery() {
+      const query = db
+        .collection(resources.USER)
+        .where("teamId", "==", teamId)
+        .orderBy("createdAt")
+        .limit(limit);
+
+      const initialResult = await query.get();
+
+      start = initialResult.docs[initialResult.docs.length - 1];
+
+      hasMore = initialResult.docs.length === limit;
+
+      return {
+        data: initialResult.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
+        hasMore,
+      };
+    }
+
+    async function getMoreQuery() {
+      const query = db
+        .collection(resources.USER)
+        .where("teamId", "==", teamId)
+        .orderBy("createdAt")
+        .startAfter(start)
+        .limit(limit);
+
+      const result = await query.get();
+
+      start = result.docs[result.docs.length - 1];
+
+      hasMore = result.docs.length === limit;
+
+      return {
+        data: result.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
+        hasMore,
+      };
+    }
+
+    const queries = {
+      initialQuery,
+      getMoreQuery,
+    };
+
+    return queries;
+  } catch (error) {
+    console.log("u good? -no");
+    console.log(error);
+  }
+}
+
 export default {
   getUser,
   createTeam,
   updateUser,
   getTeamByInvite,
   getLeaderByTeam,
+  getUsersByTeam,
 };

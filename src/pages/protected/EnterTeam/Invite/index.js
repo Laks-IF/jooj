@@ -10,10 +10,20 @@ import Logo from "../../../../assets/browser-favicon-64.png";
 import firebase_services from "../../../../services/firebase";
 
 import Particles from "../../../../components/ParticlesBackground";
+import Loader from "../../../../components/Loader";
 
 import * as S from "./styles";
+import Connect from "../../../../store/connect";
+import { setLoaderAction } from "../../../../store/reducers/loader";
+import { setUserAction } from "../../../../store/reducers/auth";
 
-export default function Invite() {
+function Invite({
+  dispatch,
+  auth: {
+    user: { uid, ...authUser },
+    ...auth
+  },
+}) {
   const [inviteData, setInviteData] = useState(null);
   const [loading, setLoading] = useState(true);
   const { invite } = useParams();
@@ -52,8 +62,38 @@ export default function Invite() {
     getInviteData();
   }, [invite]);
 
+  async function handleAcceptInvite() {
+    try {
+      dispatch(setLoaderAction({ isLoading: true }));
+
+      await firebase_services.firestore.updateUser(
+        {
+          teamId: inviteData.team.id,
+        },
+        uid
+      );
+
+      dispatch(
+        setUserAction({
+          ...auth,
+          user: {
+            ...authUser,
+            isLeader: false,
+            teamId: inviteData.team.id,
+          },
+        })
+      );
+
+      dispatch(setLoaderAction({ isLoading: false }));
+    } catch (error) {
+      console.log("Error:");
+      console.log(error);
+    }
+  }
+
   return (
     <S.InviteWrapper>
+      <Loader />
       <Particles />
       <S.InviteContainer>
         <S.InviteHeader onClick={handleComeBack}>
@@ -89,7 +129,9 @@ export default function Invite() {
                     Turma de {dateString}
                   </S.InviteTeamDate>
                 </S.InviteTeamDateWrapper>
-                <S.InviteButton>Aceitar</S.InviteButton>
+                <S.InviteButton onClick={handleAcceptInvite}>
+                  Aceitar
+                </S.InviteButton>
               </S.InviteBody>
             );
           })()
@@ -118,3 +160,10 @@ export default function Invite() {
     </S.InviteWrapper>
   );
 }
+
+const mapStateToProps = ({ auth }, props) => ({
+  auth,
+  ...props,
+});
+
+export default Connect(mapStateToProps)(Invite);
