@@ -80,7 +80,10 @@ async function getUser(data, uid) {
   // ===================================================
   // RETURN DATA OF UPDATED SNAPSHOT
   // ===================================================
-  return snapshot.data();
+  return {
+    ...snapshot.data(),
+    uid: snapshot.id,
+  };
 }
 
 async function createTeam({ name, password }, userId) {

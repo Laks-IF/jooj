@@ -12,4 +12,6 @@ export const TeamUserLoaderWrapper = styled.div`
 
   display: flex;
   justify-content: center;
+
+  opacity: 0.2;
 `;
