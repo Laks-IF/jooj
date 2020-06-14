@@ -18,7 +18,7 @@ function Team({
   const [loading, setLoading] = useState(true);
   const [usersQuery, setUsersQuery] = useState({
     queries: firebase_services.firestore.getUsersByTeam(teamId, {
-      limit: 1,
+      limit: 10,
     }),
     hasMore: null,
     initial: true,
