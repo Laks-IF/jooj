@@ -12,10 +12,10 @@ export const LoaderWrapper = styled.div`
 
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
 
-  &.loader__loading {
+  &.loader--loading {
     animation: loader 1s ease-in-out 0s infinite;
   }
-  &.loader__static {
+  &.loader--static {
     animation: none;
   }
   @keyframes loader {
