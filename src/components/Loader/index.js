@@ -7,7 +7,7 @@ import * as S from "./styles";
 function Loader({ loader }) {
   return (
     <S.LoaderWrapper
-      className={loader.isLoading ? "loader__loading" : "loader__static"}
+      className={loader.isLoading ? "loader--loading" : "loader--static"}
     />
   );
 }
